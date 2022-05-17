@@ -1,20 +1,26 @@
 import React from 'react'
-import { Flex } from '@chakra-ui/react'
-import Counter from './Counter'
+import { Flex, Box } from '@chakra-ui/react'
+import Counter from './ItemCount'
+import Boton from '../Header/Boton'
 
 const ItemListContainer = (props) => {
   return (
     <>
     <Flex
-    m='100px'
+    m='10px'
+    p='20px'
+    w='25%'
     direction='column'
+    align="center"
     justify="center"
-    align="center">
-      <h1>{props.greeting}</h1>
+    bg='#14171A'
+    color='white'>
+      <Box align="center" fontSize='3xl'>{props.greeting}</Box>
       <Counter 
       initial={1}
       stock={10}
       />
+      <Boton m='2' click=''>Agregar al carrito</Boton>
     </Flex>
     </>
   )

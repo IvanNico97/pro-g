@@ -37,7 +37,7 @@ const NavBar = ({nombre, p, m}) => {
             </Box>
         </Box>
         <Buscador/>
-        <Boton p='6' m='3' nombre='Favoritos'/>
+        <Boton p='6' m='3' nombre='Favoritos'>Favoritos</Boton>
         <CardWidget />
     </Flex>
     </>

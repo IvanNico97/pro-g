@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
-import { Flex, Button } from '@chakra-ui/react'
+import { Flex, Box } from '@chakra-ui/react'
 import Boton from '../Header/Boton'
 
 const Counter = ({initial, stock, m, nombre, onClick}) => {
     const [count, setCount] = useState(initial)
 
-    const Sumar = () => {
+    const Increment = () => {
         if ( count < stock ) {
         setCount ( count + 1)
         }
     }
 
-    const Restar = () => {
+    const Decrement = () => {
         if ( count > initial ){
         setCount ( count - 1)
         }
@@ -19,13 +19,14 @@ const Counter = ({initial, stock, m, nombre, onClick}) => {
 
   return (
     <>
-    <Flex 
+    <Flex
+    direction='row'
     align="center"
     justify="center"
     >
-        <Boton m='10' nombre='+' click={Sumar}/>
-        <div>{count}</div>
-        <Boton m='10' nombre='-' click={Restar}/>
+      <Boton m='8' click={Increment}>+</Boton>
+      <Box>{count}</Box>
+      <Boton m='8' click={Decrement}>-</Boton>
     </Flex>
     </>
   )

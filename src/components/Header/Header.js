@@ -25,7 +25,7 @@ const Header = ({nombre, m, p}) => {
       </Box>
       <NavBar/>
       <Buscador/>
-      <Boton p='6' m='4' nombre='Favoritos'/>
+      <Boton p='6' m='4'>Favoritos</Boton>
       <CardWidget/>
     </Flex>
     </>
