@@ -24,9 +24,9 @@ const Counter = ({initial, stock, m, nombre, onClick}) => {
     align="center"
     justify="center"
     >
-      <Boton m='8' click={Increment}>+</Boton>
-      <Box>{count}</Box>
-      <Boton m='8' click={Decrement}>-</Boton>
+      <Boton mr='8' mb='4' click={Increment}>+</Boton>
+      <Box mb='4'>{count}</Box>
+      <Boton ml='8' mb='4' click={Decrement}>-</Boton>
     </Flex>
     </>
   )
