@@ -13,7 +13,8 @@ const Boton = (props) => {
         mb={props.mb}
         p={props.p}
         pt={props.pt} 
-        onClick={props.click} 
+        onClick={props.click}
+        type={props.type} 
         colorScheme='twitter'
         >
         {props.children}

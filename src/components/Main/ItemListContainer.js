@@ -1,29 +1,35 @@
-import React from 'react'
-import { Flex, Box, Image } from '@chakra-ui/react'
-import Counter from './ItemCount'
-import Boton from '../Header/Boton'
-import placa2 from '../Imagenes/placa2.jpg'
+import React, {useState, useEffect} from 'react'
+import { Flex } from '@chakra-ui/react'
+import ItemList from './ItemList'
+import { callProducts } from './asyncmock'
+ 
+const ItemListContainer = (props,{greeting}) => {
+  const [products, setProducts] = useState([])
 
-const ItemListContainer = (props) => {
+  useEffect(() => {
+    callProducts()
+      .then(response => {
+        setProducts(response)
+      })
+  }, [])
+
+
   return (
     <>
-    <Flex
-    m='10px'
-    p='5px'
-    w='25%'
-    direction='column'
-    align="center"
-    justify="space-between"
-    color='#14171A'
-    >
-      <Box pt='4' align="center" fontSize='2xl'>{props.greeting}</Box>
-      <Image p='6' boxSize='250px' src={placa2}/>
-      <Counter 
-      initial={1}
-      stock={10}
-      />
-      <Boton m='2'>Agregar al carrito</Boton>
-    </Flex>
+      <Flex
+        m='10px'
+        p='15px'
+        w='100%'
+        h='100%'
+        direction='row'
+        align="center"
+        justify="space-around"
+        color='#14171A'
+        fontFamily='Roboto, sans-serif'
+      >
+        <h1>{greeting}</h1>
+        <ItemList products={products} />
+      </Flex>
     </>
   )
 }

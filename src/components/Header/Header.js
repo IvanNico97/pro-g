@@ -6,7 +6,7 @@ import Buscador from './Buscador'
 import CardWidget from './CardWidget'
 
 
-const Header = ({nombre, m, p}) => {
+const Header = () => {
   return (
     <>
     <Flex
