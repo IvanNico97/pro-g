@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { Flex } from '@chakra-ui/react'
+import { Flex, Heading } from '@chakra-ui/react'
 import ItemList from './ItemList'
 import { callProducts } from './asyncmock'
  
-const ItemListContainer = (props,{greeting}) => {
+const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -17,18 +17,24 @@ const ItemListContainer = (props,{greeting}) => {
   return (
     <>
       <Flex
-        m='10px'
-        p='15px'
         w='100%'
         h='100%'
-        direction='row'
+        direction='column'
         align="center"
         justify="space-around"
         color='#14171A'
         fontFamily='Roboto, sans-serif'
       >
-        <h1>{greeting}</h1>
-        <ItemList products={products} />
+        <Heading size='3xl' m='10px' p='10px'>{greeting}</Heading>
+        <Flex 
+          direction='row'
+          align="center"
+          justify="center"
+          w='100%'
+          m='8'
+        >
+          <ItemList products={products} />
+        </Flex>
       </Flex>
     </>
   )
