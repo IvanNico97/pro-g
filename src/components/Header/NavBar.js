@@ -1,8 +1,7 @@
 import React from 'react'
 import { Flex, Box, Text, Link } from '@chakra-ui/react'
 import CardWidget from './CardWidget'
-/* import Boton from './Boton' */
-import Buscador from './Buscador'
+import Buscador from '../Elements/Buscador'
 import { AiFillHeart } from "react-icons/ai";
 import { BsCart2 } from "react-icons/bs";
 
@@ -39,8 +38,8 @@ const NavBar = ({nombre, p, m}) => {
             </Box>
         </Box>
         <Buscador/>
-        <CardWidget icon={<AiFillHeart/>}/>
-        <CardWidget icon={<BsCart2/>}/>
+        <CardWidget ml='1' mr='2' colorScheme='twitter' icon={<AiFillHeart/>}/>
+        <CardWidget ml='1' mr='2' colorScheme='twitter' icon={<BsCart2/>}/>
     </Flex>
     </>
     

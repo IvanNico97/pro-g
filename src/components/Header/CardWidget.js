@@ -3,20 +3,23 @@ import { Flex, IconButton } from '@chakra-ui/react'
 
 
 
-const CardWidget = ({icon}) => {
+const CardWidget = ({icon, bg, align, color, colorScheme, mt,ml,mr}) => {
 
   return (
     <>
       <Flex
-      align='center'
+      align={align}
       borderRadius='8px'
-      bg='#1DA1F2'
-      mr='2'
-      ml='1'
+      bg={bg} /* #14171A, '#1DA1F2' */ 
+      mt={mt}
+      mr={mr}
+      ml={ml}
       >
       <IconButton
+        align={align}
         size='lg'
-        colorScheme='twitter'
+        colorScheme={colorScheme}
+        color={color}
         icon={icon}/>
       {/* <Box as='button' pr='2'>5</Box> */}
       </Flex>

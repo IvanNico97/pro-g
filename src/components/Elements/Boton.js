@@ -5,7 +5,8 @@ const Boton = (props) => {
   return (
     <>
         <Button 
-        size='md' 
+        size={props.size}
+        w={props.w}
         m={props.m}
         ml={props.ml} 
         mt={props.mt} 
@@ -15,7 +16,8 @@ const Boton = (props) => {
         pt={props.pt} 
         onClick={props.click}
         type={props.type} 
-        colorScheme='twitter'
+        colorScheme={props.colorScheme}
+        color={props.color}
         >
         {props.children}
         </Button>

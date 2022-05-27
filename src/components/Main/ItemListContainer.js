@@ -25,9 +25,9 @@ const ItemListContainer = ({greeting}) => {
         color='#14171A'
         fontFamily='Roboto, sans-serif'
       >
-        <Heading size='3xl' m='10px' p='10px'>{greeting}</Heading>
+        <Heading align='center' size='4xl' m='10px' p='10px'>{greeting}</Heading>
         <Flex 
-          direction='row'
+          wrap='wrap'
           align="center"
           justify="center"
           w='100%'

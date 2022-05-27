@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Image, Heading, Text } from '@chakra-ui/react'
-import Boton from '../Header/Boton'
+import Boton from '../Elements/Boton'
 
 
 const Item = ({ name, price, img }) => {

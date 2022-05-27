@@ -1,8 +1,8 @@
 import React from 'react'
 import { Flex, Text, Box} from '@chakra-ui/react'
 import NavBar from './NavBar'
-import Boton from './Boton'
-import Buscador from './Buscador'
+import Boton from '../Elements/Boton'
+import Buscador from '../Elements/Buscador'
 import CardWidget from './CardWidget'
 
 
