@@ -1,5 +1,6 @@
 Documentar
 
+![alt text](/src/components/Imagenes/Gif/Gif.gif "Gif")
 
 Para inicializar el proyecto:
 
@@ -14,3 +15,4 @@ Su componente NavBar es la ruta '/category/:categoryName', carga un listado de l
 Cada producto cuenta con un Link hacia '/detail/:productId' que es el componente ItemDetailContainer, este carga una card con el detalle del producto.
 
 El componente ItemDetailContainer, cuenta con dos Link, uno que nos direcciona al componente Comprar y otro al componente Carrito.
+
