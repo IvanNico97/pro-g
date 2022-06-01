@@ -1,9 +1,10 @@
 import React from 'react'
-import { Flex, Box, Text, Link } from '@chakra-ui/react'
-import CardWidget from './CardWidget'
+import { Flex, Box } from '@chakra-ui/react'
+import CartWidget from './CartWidget'
 import Buscador from '../Elements/Buscador'
 import { AiFillHeart } from "react-icons/ai";
-import { BsCart2 } from "react-icons/bs";
+import { BsFillCartFill } from "react-icons/bs";
+import { NavLink, Link } from "react-router-dom";
 
 const NavBar = ({nombre, p, m}) => {
   return (
@@ -20,26 +21,32 @@ const NavBar = ({nombre, p, m}) => {
     fontSize= '15px'
     fontFamily='Roboto, sans-serif'
     >
-        <Box ml='6' pr='10' w='25%'>
-          <Text fontSize='2xl' pl='4' color='#1DA1F2'><big>PRO G</big></Text>
-        </Box>
+        <Link to='/'>
+          <Box  ml='6' pr='10' pl='4' w='200px' fontSize='3xl' color='#1DA1F2' >
+            PRO G
+          </Box>
+        </Link>
         <Box w='100%' display='flex'>
             <Box mr='8'>
-                <Link>Placas de video</Link>
+                <NavLink to='/category/placas'>Placas de video</NavLink>
             </Box>
             <Box mr='8'>
-                <Link>Motherboards</Link>
+                <NavLink to='/category/mothers'>Motherboards</NavLink>
             </Box>
             <Box mr='8'>
-                <Link>Gabinetes</Link>
+                <NavLink to='/category/gabinetes'>Gabinetes</NavLink>
             </Box>
             <Box mr='8'>
-                <Link>Perifericos</Link>
+                <NavLink to='/category/perifericos' >Perifericos</NavLink>
             </Box>
         </Box>
         <Buscador/>
-        <CardWidget ml='1' mr='2' colorScheme='twitter' icon={<AiFillHeart/>}/>
-        <CardWidget ml='1' mr='2' colorScheme='twitter' icon={<BsCart2/>}/>
+        <Link to='/favoritos'>
+          <CartWidget ml='1' mr='2' colorScheme='twitter' icon={<AiFillHeart/>}/>
+        </Link>
+        <Link to='/carrito'>
+          <CartWidget ml='1' mr='2' colorScheme='twitter' icon={<BsFillCartFill/>}/>
+        </Link>
     </Flex>
     </>
     

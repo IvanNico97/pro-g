@@ -5,21 +5,21 @@ const Boton = (props) => {
   return (
     <>
         <Button 
-        size={props.size}
-        w={props.w}
-        m={props.m}
-        ml={props.ml} 
-        mt={props.mt} 
-        mr={props.mr}
-        mb={props.mb}
-        p={props.p}
-        pt={props.pt} 
-        onClick={props.click}
-        type={props.type} 
-        colorScheme={props.colorScheme}
-        color={props.color}
+          size={props.size}
+          w={props.w}
+          m={props.m}
+          ml={props.ml} 
+          mt={props.mt} 
+          mr={props.mr}
+          mb={props.mb}
+          p={props.p}
+          pt={props.pt} 
+          onClick={props.click}
+          type={props.type} 
+          colorScheme={props.colorScheme}
+          color={props.color}
         >
-        {props.children}
+          {props.children}
         </Button>
     </>
   )

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Flex, Image, Heading, Text } from '@chakra-ui/react'
+import { Link } from "react-router-dom";
 import Boton from '../Elements/Boton'
 
 
-const Item = ({ name, price, img }) => {
+const Item = ({ id, name, price, img }) => {
   return (
     <>
       <Flex 
@@ -30,12 +31,15 @@ const Item = ({ name, price, img }) => {
         </Flex>
         <Flex
          p='2'>
-          <Text align='center' color='#1DA1F2' fontSize='2xl'>${price}</Text>
+          <Text align='center' fontSize='2xl'>${price}</Text>
         </Flex>
         <Flex 
           p='2'
-          mb='4'>
-        <Boton align='center'>Ver detalle del producto</Boton>
+          mb='4'
+        >
+        <Link to={`/detail/${id}`}>
+          <Boton size='md' colorScheme='twitter'>Ver detalles del producto</Boton>
+        </Link>
         </Flex>
       </Flex>
     </>
