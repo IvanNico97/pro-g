@@ -44,7 +44,7 @@ const NavBar = ({nombre, p, m}) => {
         <Link to='/favoritos'>
           <CartWidget ml='1' mr='2' colorScheme='twitter' icon={<AiFillHeart/>}/>
         </Link>
-        <Link to='/carrito'>
+        <Link to='/cart'>
           <CartWidget ml='1' mr='2' colorScheme='twitter' icon={<BsFillCartFill/>}/>
         </Link>
     </Flex>

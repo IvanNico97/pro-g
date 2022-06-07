@@ -11,7 +11,6 @@ const ItemDetailContainer = () => {
 
     useEffect (() => {
         setLoading(true)
-
         callProduct(productId)
           .then(response => { 
             setProduct(response)
@@ -36,10 +35,10 @@ const ItemDetailContainer = () => {
     )
   }
   
-    return (
-        <>
-          <ItemDetail {...product} />
-        </>
+  return (
+    <>
+      <ItemDetail {...product} />
+    </>
     )
 }
 

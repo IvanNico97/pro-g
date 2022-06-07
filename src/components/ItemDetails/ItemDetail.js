@@ -1,17 +1,21 @@
-import React from 'react'
-import { SimpleGrid, Flex, Box, Heading, Text, Image} from '@chakra-ui/react'
-import Boton from '../Elements/Boton'
-import Counter from '../Elements/Counter'
+import React, { useState } from 'react'
+import { SimpleGrid, Box, Heading, Text, Image} from '@chakra-ui/react'
+import ItemCount from '../Elements/ItemCount'
 import CartWidget from '../Header/CartWidget'
 import { Link } from 'react-router-dom'
 import { AiFillHeart } from "react-icons/ai";
 
 
 const ItemDetail = (props) => {
+  const [quantity, setQuantity] = useState(0)
 
+    const handleCount = () => {
+        console.log('añadido al carrito');
+        /* setQuantity(count)   */
+    } 
+    
     return (
         <>
-        
             <SimpleGrid
                 columns={{ sm:2, md: 2}}
                 align='center'
@@ -36,30 +40,22 @@ const ItemDetail = (props) => {
                     borderRadius='8' 
                     borderColor='#E1E8ED'
                 >
-                <Link to='/favoritos'>
-                        <CartWidget color='#1DA1F2' ml='86%' icon={<AiFillHeart/>} /> 
-                </Link>
+                    <Link to='/favoritos'>
+                            <CartWidget color='#1DA1F2' ml='86%' icon={<AiFillHeart/>} /> 
+                    </Link>
                     <Box m='8' mt='2'>
                         <Heading size='xl'>{props.name}</Heading>
                     </Box>
                     <Box m='8'>
-                    <Text fontSize='md'>{props.description}</Text>
+                        <Text fontSize='md'>{props.description}</Text>
                     </Box>
                     <Box ml='8' pb='3' align='left'>
                         <Text color='#1DA1F2' fontSize='4xl'> ${props.price}</Text>
                         <Text fontSize='md'> en {props.dues}</Text>
                     </Box>
-                    <Box w='300px' border='1px' borderRadius='8' borderColor='#E1E8ED'>
-                        <Counter initial={1} stock={props.stock} align='center' justify='center'/>
-                    </Box>
-                    <Flex direction='column'>
-                        <Link to='/compra'>
-                            <Boton w='300px' mt='2' size='lg' colorScheme='twitter'>Comprar</Boton>
-                        </Link>
-                        <Link to='/carrito'>
-                            <Boton w='300px' mt='2' size='lg' color='#1DA1F2'>Agregar al carrito</Boton>
-                        </Link>
-                    </Flex>
+                    {
+                        quantity > 0 ? <Link to='/cart'>Finalizar compra</Link> : <ItemCount initial={1} stock={props.stock} handleCount={handleCount} />
+                    }
                     <Box align='left' m='2' w='300px'>
                         <Text fontSize='sm' p='2'>Compra protegida</Text>
                         <Text fontSize='sm' p='2'>Envio Gratis</Text>
