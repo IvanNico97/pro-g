@@ -4,7 +4,7 @@ import Boton from './Boton'
 import ButtonCount from './ButtonCount'
 import InputCount from './InputCount'
 
-const ItemCount = ({initial, stock, handleCount }) => {
+const ItemCount = ({initial, stock, handleCount, setCount }) => {
   const [inputType, setInputType] = useState('input')
  
   const Count = inputType === 'input' ? InputCount : ButtonCount
@@ -18,7 +18,7 @@ const ItemCount = ({initial, stock, handleCount }) => {
       </Flex>
       <Box w='auto'>
         <Count initial={initial} handleCount={handleCount} stock={stock}/>
-      </Box>
+        </Box>
     </>
   )
 }

@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { Flex, Box, Text } from '@chakra-ui/react'
 import Boton from './Boton'
-/* import { Link } from 'react-router-dom' */
 
 const ButtonCount = ({initial, stock, handleCount }) => {
     const [count, setCount] = useState(initial)
@@ -16,9 +15,7 @@ const ButtonCount = ({initial, stock, handleCount }) => {
         if(count > initial) {
             setCount ( count - 1)
         }
-    }
-
-    console.log(count)
+    } 
     
     return (
         <>

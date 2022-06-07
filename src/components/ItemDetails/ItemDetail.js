@@ -9,10 +9,12 @@ import { AiFillHeart } from "react-icons/ai";
 const ItemDetail = (props) => {
   const [quantity, setQuantity] = useState(0)
 
-    const handleCount = () => {
+    const handleCount = (count) => {
         console.log('añadido al carrito');
-        /* setQuantity(count)   */
+        setQuantity(count)  
     } 
+
+    // Sincronizar el valor del contador en el ItemDetail
     
     return (
         <>
@@ -54,7 +56,7 @@ const ItemDetail = (props) => {
                         <Text fontSize='md'> en {props.dues}</Text>
                     </Box>
                     {
-                        quantity > 0 ? <Link to='/cart'>Finalizar compra</Link> : <ItemCount initial={1} stock={props.stock} handleCount={handleCount} />
+                        quantity > 0 ? <Link to='/cart'>Finalizar compra</Link> : <ItemCount initial={1} stock={props.stock} handleCount={handleCount}/>
                     }
                     <Box align='left' m='2' w='300px'>
                         <Text fontSize='sm' p='2'>Compra protegida</Text>
