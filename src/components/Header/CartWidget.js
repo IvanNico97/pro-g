@@ -1,27 +1,34 @@
-import React from 'react'
-import { Flex, IconButton } from '@chakra-ui/react'
-
+import React, { useContext } from 'react'
+import { Flex, Box, Button } from '@chakra-ui/react'
+import { CartContext } from '../../context/CartContext'
 
 
 const CartWidget = ({icon, bg, align, color, colorScheme, mt,ml,mr}) => {
+  const {getQuantity} = useContext(CartContext)
+
+  const quantity = getQuantity() 
 
   return (
     <>
       <Flex
         align={align}
-        borderRadius='8px'
+        borderRadius='6'
         bg={bg} 
         mt={mt}
         mr={mr}
         ml={ml}
       >
-        <IconButton
+        <Button
           align={align}
-          size='lg'
+          size='md'
           colorScheme={colorScheme}
           color={color}
-          icon={icon}
-        />
+          leftIcon={icon}
+        >
+          <Box ml='1'>
+            {quantity} 
+          </Box> 
+        </Button>
       </Flex>
     </>
 

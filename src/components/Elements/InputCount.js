@@ -13,8 +13,8 @@ const InputCount = ({initial,stock, handleCount}) => {
 
   return (
     <>
-      <Input w='300px' type='number' onChange={handleChange} value={count} initial={initial} stock={stock}/>
-      <Boton click={() => handleCount(count)} w='300px' mt='2' size='lg' color='#1DA1F2'>Agregar al carrito</Boton>
+      <Input type='number' w='auto' onChange={handleChange} value={count} initial={initial} stock={stock}/>
+      <Boton click={() => handleCount(count)} mt='2' w='auto' size='lg' color='#1DA1F2'>Agregar al carrito</Boton>
     </>
   )
 }

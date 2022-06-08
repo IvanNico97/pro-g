@@ -22,17 +22,17 @@ const ItemDetailContainer = () => {
     }, [productId])
 
     if(loading){
-    return ( 
-      <Flex h='500px' align='center' justify='center'>
-        <Spinner
-            thickness='4px'
-            speed='1s'
-            emptyColor='#E1E8ED'
-            color='#1DA1F2'
-            size='xl'
-        />
-      </Flex>
-    )
+      return ( 
+        <Flex h='500px' align='center' justify='center'>
+          <Spinner
+              thickness='4px'
+              speed='1s'
+              emptyColor='#E1E8ED'
+              color='#1DA1F2'
+              size='xl'
+          />
+        </Flex>
+      )
   }
   
   return (

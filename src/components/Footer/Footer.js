@@ -18,7 +18,7 @@ const Footer = () => {
         fontFamily='Roboto, sans-serif'
         >
             <Link to='/'>
-                <Box  ml='6' pr='10' pl='4' w='200px' fontSize='3xl' color='#1DA1F2' >
+                <Box  ml='10' pl='8' w='200px' fontSize='3xl' color='#1DA1F2' >
                     PRO G
                 </Box>
             </Link>   

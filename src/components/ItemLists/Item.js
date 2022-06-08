@@ -17,7 +17,7 @@ const Item = ({ id, name, price, img }) => {
         h='400px'
         border='1px'
         borderColor='#E1E8ED'
-        borderRadius='8'
+        borderRadius='6'
       >
         <Flex
           pt='4'
