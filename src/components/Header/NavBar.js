@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Flex, Box } from '@chakra-ui/react'
 import CartWidget from './CartWidget'
-/* import Buscador from '../Elements/Buscador'
-import { AiFillHeart } from "react-icons/ai"; */
 import { BsFillCartFill } from "react-icons/bs";
 import { NavLink, Link } from "react-router-dom";
+import {CartContext} from '../../context/CartContext'
+
 
 const NavBar = () => {
+
+  const {getQuantity} = useContext(CartContext)
+
+  const quantity = getQuantity()
+
   return (
     <>
       <Flex
-        w='100%'
+        w='auto'
         direction='row'
         align='center'
         justify='space-around'
@@ -30,9 +35,11 @@ const NavBar = () => {
         <NavLink to='/category/mothers'>Motherboards</NavLink>
         <NavLink to='/category/gabinetes'>Gabinetes</NavLink>
         <NavLink to='/category/perifericos' >Perifericos</NavLink>
+        { quantity > 0 &&
         <Link to='/cart'>
           <CartWidget colorScheme='twitter' icon={<BsFillCartFill/>}/>
         </Link>
+        }
       </Flex>
     </>
     

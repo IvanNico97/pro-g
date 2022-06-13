@@ -49,8 +49,7 @@ const ItemCart = ({ id, name, price, quantity }) => {
                     <Boton w='100px' colorScheme='twitter'>Comprar</Boton>
                 </Box>
             </Flex>
-        </Flex>
-        
+        </Flex> 
     </>
   )
 }
