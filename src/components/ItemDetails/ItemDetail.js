@@ -1,9 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { Heading, Text, Image, Flex } from '@chakra-ui/react'
 import ItemCount from '../Elements/ItemCount'
-/* import CartWidget from '../Header/CartWidget' */
 import { Link } from 'react-router-dom'
-/* import { AiFillHeart } from "react-icons/ai"; */
 import { CartContext } from '../../context/CartContext'
 import Boton from '../Elements/Boton'
 
