@@ -52,7 +52,7 @@ const ItemDetail = ({id, name, price, img, stock, description, dues}) => {
                             quantity > 0 ? 
                                 <Link to='/cart'>
                                     <Boton size='lg' colorScheme='twitter'>
-                                        Finalizar compra
+                                        Confirmar compra
                                     </Boton>
                                 </Link> 
                             :   <ItemCount initial={hasThisProduct()} stock={stock} handleCount={handleCount}/>
