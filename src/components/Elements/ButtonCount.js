@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import { Flex, Box, Text } from '@chakra-ui/react'
-import Boton from './Boton'
+import { Flex, Box, Text, Button } from '@chakra-ui/react'
 
 const ButtonCount = ({initial, stock, handleCount }) => {
     const [count, setCount] = useState(initial)
@@ -29,17 +28,17 @@ const ButtonCount = ({initial, stock, handleCount }) => {
                     align='center'
                 >
                     <Box>
-                        <Boton colorScheme='twitter' size='xs' click={Suma}>+</Boton>
+                        <Button size='xs' onClick={Suma}>+</Button>
                     </Box>
                     <Box p='5'>
                         <Text>{count} unidades </Text>
                     </Box>
                     <Box>
-                        <Boton colorScheme='twitter' size='xs' click={Resta}>-</Boton>
+                        <Button size='xs' onClick={Resta}>-</Button>
                     </Box>
                 </Flex>
                 <Flex>
-                    <Boton click={() => handleCount(count)} w='auto' mt='2' size='lg' color='#1DA1F2'>Agregar al carrito</Boton>
+                    <Button onClick={() => handleCount(count)} w='auto' mt='2' size='lg' colorScheme='twitter'>Agregar al carrito</Button>
                 </Flex>
             </Flex>
         </>

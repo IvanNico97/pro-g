@@ -112,14 +112,14 @@ const Cart = () => {
       { 
         cart.map(productos => <ItemCart key={productos.id} {...productos}/>)
       }
-      <Flex align='center' justify='center'>
-        <Heading>Total a Pagar : ${precioTotal()}</Heading>
-      </Flex>
-      <Flex align='center' justify='center' m='10'>
+      <Box w='auto' align='center' justify='center'>
+        <Heading size='2xl' m={{ base: '8', sm: '8', md: '10', lg: '10' }}>Total a Pagar: ${precioTotal()}</Heading>
+      </Box>
+      <Flex direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} align='center' justify='center' m='2' mb='8'>
         <Box p='8'>
           <Boton colorScheme='twitter' w='200px' click={()=> clearCart()}>Limpiar Carrito</Boton>
         </Box>
-        <Box p='8'>
+        <Box>
           <Boton click={createOrder} colorScheme='twitter' w='200px'>Generar orden</Boton>
         </Box>
       </Flex> 

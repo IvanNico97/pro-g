@@ -65,7 +65,7 @@ const ItemListContainer = ({greeting}) => {
         categoryId ?
         <Heading align='center' size='2xl' m='8' p='6'>{categoryId}</Heading> 
         : 
-        <Heading align='center' size='2xl' m='8' p='6'>{greeting}</Heading>
+        <Heading as='u' align='center' size='2xl' m='8' p='6'>{greeting}</Heading>
       }
         <Flex 
           wrap='wrap'

@@ -10,9 +10,7 @@ const CartWidget = ({icon, colorScheme, bg}) => {
 
   return (
     <>
-      <Flex
-        borderRadius='6'
-      >
+      <Flex>
         <Button
           size='md'
           colorScheme={colorScheme}

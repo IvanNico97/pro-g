@@ -8,7 +8,6 @@ import { LOGO6 } from '../Imagenes/index'
 import User from '../Login/User'
 import CartMenu from './CartMenu'
 
-
 const NavBar = () => {
   /* const [ categories, setCategories ] = useState() */
 
@@ -34,8 +33,8 @@ const NavBar = () => {
     <>
       <Flex
         w='auto'
-        h='130px'
-        direction='row'
+        h='auto'
+        direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}
         align='center'
         justify='space-between'
         color='white'
@@ -43,30 +42,27 @@ const NavBar = () => {
         fontSize= '30px'
         fontFamily='Roboto, sans-serif'
       >
-      <Box pl='4' ml='4'>
-        <Link to='/'>
-          <Image src={LOGO6} borderRadius='full' boxSize='130px' alt='logo'></Image>
-        </Link>
-      </Box>
-        { 
-          /* categories.map(categorias => {
-          <NavLink key={categorias.id} to={`/category/${categorias.id}`}>{categorias.name}</NavLink>
-          }) */
-        }
-        
-      
-        <Flex align='center' justify='center'>
-          <Box mr='2' pr='2'>
+        <Box pl='4' ml='4'>
+          <Link to='/'>
+            <Image src={LOGO6} borderRadius='full' boxSize='130px' alt='logo'></Image>
+          </Link>
+        </Box>
+        <Flex
+          w={{ base: '100%', sm: '100%', md: 'auto', lg: 'auto' }}
+          align='center' 
+          justify={{ base: 'space-around', sm: 'space-around', md: 'space-around', lg: 'space-around' }}
+        >
+          <Box mr='2' mt='1' pr='2'>
             <CartMenu />
           </Box>
-          <Box mr='4' pr='4'>
+          <Box mr='2' pr='2'>
             { quantity > 0 &&
               <Link to='/cart'>
                 <CartWidget bg='#14171A' icon={<BsFillCartFill/>}/>
               </Link>
             }
           </Box>
-          <Box mr='6' pr='6' pt='3'>
+          <Box mr='4' mt='2' pr='4' >
             <User/>
           </Box>
         </Flex>

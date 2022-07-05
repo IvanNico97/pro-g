@@ -12,8 +12,8 @@ const ItemCount = ({initial, stock, handleCount}) => {
     
   return (
     <>
-      <Flex mb='2' mt='2'>
-        <Boton size='xs' colorScheme='twitter' click={() => setInputType(inputType === 'input' ? 'button' : 'input' )}>
+      <Flex mb='2'>
+        <Boton size='xs' w='200px' colorScheme='twitter' click={() => setInputType(inputType === 'input' ? 'button' : 'input' )}>
           Cambiar contador
         </Boton>
       </Flex>

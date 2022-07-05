@@ -63,7 +63,7 @@ const User = () => {
             <MenuDivider/>
             <MenuItem>
               <Link to='/cart'>
-                <Button leftIcon={<BsFillCartFill/>} w='200px' bg='#14171A'>
+                <Button leftIcon={<BsFillCartFill/>} w='200px' bg='#E1E8ED' color='#14171A'>
                   Cart
                 </Button>
               </Link>   

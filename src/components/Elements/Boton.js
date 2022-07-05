@@ -18,6 +18,7 @@ const Boton = (props) => {
           type={props.type} 
           colorScheme={props.colorScheme}
           color={props.color}
+          br={props.borderRadius}
         >
           {props.children}
         </Button>
