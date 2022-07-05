@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
 import { CartContext } from '../../context/CartContext'
-import { Flex, Box, Heading, Text } from '@chakra-ui/react'
-import Boton from '../Elements/Boton'
+import { Flex, Box, Heading, Text, Image, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import { BsTrashFill } from "react-icons/bs";
 
 
-const ItemCart = ({ id, name, price, quantity }) => {
+const ItemCart = ({ id, name, price, quantity, img }) => {
     const { removeItem } = useContext (CartContext)
 
   return (
@@ -18,7 +18,10 @@ const ItemCart = ({ id, name, price, quantity }) => {
             border='1px'
             borderRadius='6' 
             borderColor='#E1E8ED' 
-        >
+        > 
+            <Box>
+                <Image src={img}></Image>
+            </Box>
             <Box>
                 <Link to={`/detail/${id}`}>
                     <Heading>
@@ -43,10 +46,7 @@ const ItemCart = ({ id, name, price, quantity }) => {
             </Box>
             <Flex direction='column'>
                 <Box mb='3'>
-                    <Boton w='100px' colorScheme='twitter' click={()=> removeItem(id)}>Eliminar</Boton>
-                </Box>
-                <Box>
-                    <Boton w='100px' colorScheme='twitter'>Comprar</Boton>
+                    <Button leftIcon={<BsTrashFill/>} w='100px' colorScheme='twitter' onClick={()=> removeItem(id)}>Eliminar</Button>
                 </Box>
             </Flex>
         </Flex> 

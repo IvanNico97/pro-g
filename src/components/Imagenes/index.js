@@ -10,7 +10,12 @@ import mouse1 from "./Perifericos/mouse1.jpg"
 import mouse3 from "./Perifericos/mouse3.jpg"
 import Teclado1 from "./Perifericos/Teclado1.jpg"
 import Teclado2 from "./Perifericos/Teclado2.jpg"
+import LOGO1 from './Logo/LOGO1.jpg'
+import LOGO2 from './Logo/LOGO2.jpg'
+import LOGO5 from './Logo/LOGO5.jpg'
+import LOGO6 from './Logo/LOGO6.jpg'
 
+export { LOGO1, LOGO2, LOGO5, LOGO6 }
 
 export { Gabinete1, Gabinete2 }
 

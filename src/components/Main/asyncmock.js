@@ -11,6 +11,7 @@ import {
     mouse3,
     Teclado1,
     Teclado2,
+    LOGO1,
 } from "../Imagenes";
 
 const products = [
@@ -141,6 +142,10 @@ const products = [
                 description: 'Mecanico, inalámbrico con luz rgb' 
             },
 ]
+
+export const logo = () => {
+    return LOGO1
+}
 
 export const callProducts = () => {
     return new Promise((resolve) => {

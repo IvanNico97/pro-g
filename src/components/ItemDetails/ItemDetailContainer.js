@@ -1,6 +1,5 @@
 import React,{ useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
-/* import { callProduct } from '../Main/asyncmock' */
 import { useParams } from 'react-router-dom'
 import { Flex, Spinner } from '@chakra-ui/react'
 import { getDoc, doc } from 'firebase/firestore'

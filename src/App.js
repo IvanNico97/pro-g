@@ -1,34 +1,61 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import React from 'react'
 import ItemListContainer from './components/ItemLists/ItemListContainer'
 import NavBar from './components/Header/NavBar'
 import Footer from './components/Footer/Footer'
 import ItemDetailContainer from './components/ItemDetails/ItemDetailContainer'
-import Favoritos from './components/Favoritos/Favoritos'
 import Cart from './components/Carrito/Cart'
 import { CartContextProvider } from './context/CartContext'
+import { AuthProvider } from './context/AuthContext'
+import { ProtectedRoute } from './services/firebase/ProtectedRoute'
+import Login from './components/Login/Login'
+
 
 
 function App() {
 
   return (
-    <CartContextProvider>
-      <BrowserRouter>
+    <AuthProvider>
+      <CartContextProvider>
         <ChakraProvider>
           <NavBar/>
-            <Routes>
-              <Route path='/' element={<ItemListContainer greeting='Catalogo de productos'/>} />
-              <Route path='/category/:categoryId' element={<ItemListContainer greeting='Categorías' />} />
-              <Route path='/detail/:productId' element={<ItemDetailContainer />} />
-              <Route path='/favoritos' element={<Favoritos/>}/>
-              <Route path='/cart' element={<Cart/>}/> 
-              <Route path='*' element={<h1>PAGE NOT FOUND 404</h1>} />
-            </Routes>
-          <Footer/>
+          <Routes>
+          <Route path='/' element=
+            {
+              <ProtectedRoute>
+                <ItemListContainer greeting='Productos destacados'/> 
+              </ProtectedRoute>
+            }
+          />
+          <Route path='/category/:categoryId' element=
+            { 
+              <ProtectedRoute>
+                <ItemListContainer/>
+              </ProtectedRoute>
+            } 
+          />
+          <Route path='/detail/:productId' element=
+            {
+              <ProtectedRoute>
+                <ItemDetailContainer /> 
+              </ProtectedRoute>
+            }
+          />
+        <Route path='/cart' element=
+          {
+            <ProtectedRoute>
+              <Cart/>
+            </ProtectedRoute>
+          }
+        /> 
+          <Route path='*' element={<h1>PAGE NOT FOUND 404</h1>} />
+          <Route path='/login' element={<Login/>}/>
+          </Routes>
+          <Footer />
         </ChakraProvider>
-      </BrowserRouter>
-    </CartContextProvider>
+      </CartContextProvider>
+    </AuthProvider>
   )
 }
 

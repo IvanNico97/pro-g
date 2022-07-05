@@ -3,7 +3,7 @@ import { Flex, Box, Button } from '@chakra-ui/react'
 import { CartContext } from '../../context/CartContext'
 
 
-const CartWidget = ({icon, bg, align, color, colorScheme, mt,ml,mr}) => {
+const CartWidget = ({icon, colorScheme, bg}) => {
   const {getQuantity} = useContext(CartContext)
 
   const quantity = getQuantity() 
@@ -11,21 +11,15 @@ const CartWidget = ({icon, bg, align, color, colorScheme, mt,ml,mr}) => {
   return (
     <>
       <Flex
-        align={align}
         borderRadius='6'
-        bg={bg} 
-        mt={mt}
-        mr={mr}
-        ml={ml}
       >
         <Button
-          align={align}
           size='md'
           colorScheme={colorScheme}
-          color={color}
+          bg={bg}
           leftIcon={icon}
         >
-          <Box ml='1'>
+          <Box>
             {quantity} 
           </Box> 
         </Button>

@@ -1,9 +1,15 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect } from 'react'
+import { useAuth } from './AuthContext'
 
 export const CartContext = createContext()
 
 export const CartContextProvider = ({children}) => {
+    const { user } = useAuth();
     const [cart, setCart] = useState([])
+    
+    useEffect(() => {
+        if(!user) setCart([])
+    }, [user])
 
     const addItem = (productAdd) => {
         if(!isInCart(productAdd.id)){

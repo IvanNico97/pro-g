@@ -1,31 +1,33 @@
 import React, { useContext, useState } from 'react'
 import ItemCart from './ItemCart'
-import { Flex, Box, Heading } from '@chakra-ui/react'
+import { Flex, Box, Heading, Text, Spinner, useToast  } from '@chakra-ui/react'
 import { CartContext } from '../../context/CartContext'
 import Boton from '../Elements/Boton'
 import { Link } from 'react-router-dom'
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 import { db, collectionName } from '../../services/firebase/index'
+import { useAuth } from '../../context/AuthContext'
 
 const Cart = () => {
   const [ loading, setLoading ] = useState(false)
   const { cart, precioTotal, clearCart, cantidadProductos } = useContext (CartContext)
+  const { user } = useAuth()
+  const toast = useToast()
 
 
   const createOrder = () => {
     setLoading(true)
     const objOrder = {
       buyer: {
-        name: 'Ivan Avila',
-        email:'ivan@gmail.com',
-        phone:'1138234493'
+        name: user.displayName,
+        email:user.email,
+        phone:user.phoneNumber,
       },
       items: cart,
       total: precioTotal(),
     }
 
     const ids= cart.map(prod => prod.id)
-    console.log(ids)
 
     const outOfStock = []
 
@@ -58,23 +60,42 @@ const Cart = () => {
         console.log(`el id de la orden es: ${id}`)
         clearCart()
       }).catch(error => {
-        console.log(error)
-        if(error.type === 'out_of_stock') {
-          alert('no hay stock')
+          if(error.type === 'out_of_stock') {
+            toast({
+              title: 'Próximamente.',
+              description: "El producto no cuenta con stock en este momento.",
+              status: 'error',
+              duration: 5000,
+              isClosable: true,
+            })
         }
       }).finally(() => {
           setLoading(false)
       })
     }
-      if(loading){
-        return <h1>Generando Orden..</h1>
+      
+    if(loading){
+      return (
+        <Flex h='500px' direction ='column' align='center' justify='center'>
+          <Heading>Cargando orden</Heading>
+          <Spinner
+            m='10'
+            thickness='4px'
+            speed='1s'
+            emptyColor='#E1E8ED'
+            color='#1DA1F2'
+            size='xl'
+          />
+        </Flex>
+      )
     }
 
   if(cantidadProductos() === 0) {
     return (
       <Flex direction='column' align='center' justify='center' m='100px'>
-        <Heading>No hay productos en el carrito</Heading>
-        <Box m='100px'>
+        <Heading>Tu carrito está vacío</Heading>
+          <Text pt='5'>¡Nuestros productos te esperan!</Text>
+        <Box m='70px'>
           <Link to='/'>
             <Boton colorScheme='twitter' size='lg'>Continue Comprando</Boton>
           </Link>

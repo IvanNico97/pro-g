@@ -1,21 +1,28 @@
 import React, {useState, useEffect} from 'react'
 import { Flex, Heading, Spinner } from '@chakra-ui/react'
 import ItemList from './ItemList'
-/* import { callProducts, callCategory } from '../Main/asyncmock' */
 import { useParams } from 'react-router-dom'
-import { getDocs, collection, query, where } from 'firebase/firestore'
-import { db } from '../../services/firebase/index'
+import { getProducts } from '../../services/firebase/firestore'
+/* import { getDocs, collection, query, where } from 'firebase/firestore'
+import { db } from '../../services/firebase/index' */
  
 const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-
   const { categoryId } = useParams()
+
 
   useEffect(() => {
     setLoading(true)
-
-    const collectionRef = categoryId 
+    getProducts(categoryId)
+    .then(response => {
+      setProducts(response)
+    }).catch(error => {
+      console.log(error)
+    }).finally(() => {
+      setLoading(false)
+    })
+    /* const collectionRef = categoryId 
       ? query(collection(db, 'products'), where('category', '==', categoryId))
       : collection(db, 'products')
 
@@ -28,7 +35,7 @@ const ItemListContainer = ({greeting}) => {
           console.log(error)
       }).finally(() => {
           setLoading(false)
-      })
+      }) */
     }, [categoryId])
 
   if(loading){
@@ -54,7 +61,12 @@ const ItemListContainer = ({greeting}) => {
         color='#14171A'
         fontFamily='Roboto, sans-serif'
       >
-        <Heading align='center' size='4xl' m='10px' p='10px'>{greeting}</Heading>
+      {
+        categoryId ?
+        <Heading align='center' size='2xl' m='8' p='6'>{categoryId}</Heading> 
+        : 
+        <Heading align='center' size='2xl' m='8' p='6'>{greeting}</Heading>
+      }
         <Flex 
           wrap='wrap'
           justify="center"
