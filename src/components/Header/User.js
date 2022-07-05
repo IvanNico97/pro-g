@@ -12,9 +12,9 @@ import {
     MenuButton,
     MenuList,
     MenuItem, 
-    MenuDivider} from '@chakra-ui/react'
+    MenuDivider } from '@chakra-ui/react'
   import { Link } from "react-router-dom";
-  import { BsFillCartFill, BsArrowRightSquareFill } from "react-icons/bs";
+  import { BsFillCartFill, BsArrowRightSquareFill, BsFillPersonLinesFill, BsGoogle  } from "react-icons/bs";
 
 const User = () => {
   const [error, setError] = useState()
@@ -42,8 +42,10 @@ const User = () => {
 
   return (
     <>
-      { !user ? 
-        <Button colorScheme='twitter' onClick= {handleGoogleSignIn}>Login</Button> 
+      { !user ?
+        <Box mb='2' justify='center'>
+          <Button colorScheme='twitter' onClick= {handleGoogleSignIn}>{<BsGoogle/>}</Button> 
+        </Box> 
         :
         <Menu>
           <MenuButton>

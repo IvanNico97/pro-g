@@ -19,7 +19,7 @@ export const CartContextProvider = ({children}) => {
                 if(producto.id === productAdd.id){
                     const newProduct = {
                         ...producto,
-                        quantity: productAdd.quantity /* + productAdd.quantity */
+                        quantity: productAdd.quantity 
                     }
                     return newProduct
                 } else {

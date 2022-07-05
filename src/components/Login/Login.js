@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Flex, Box, Heading} from '@chakra-ui/react'
-import Boton from '../Elements/Boton'
+import { Flex, Box, Heading, Button} from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../../context/AuthContext'
+import { BsGoogle } from "react-icons/bs";
 
 const Login = () => {
     const [error, setError] = useState()
@@ -31,8 +31,8 @@ const Login = () => {
         <Box m='8'>
             <Heading>Login for access</Heading>
         </Box>
-        <Box m='8' w='200px'>
-            <Boton colorScheme='twitter' w='200px' click={handleGoogleSignIn}>Login</Boton>
+        <Box m='8'>
+            <Button colorScheme='twitter' w='auto' onClick={handleGoogleSignIn} leftIcon={<BsGoogle/>}>LOGIN</Button>
         </Box>
     </Flex>
   )

@@ -4,11 +4,13 @@ import ItemCount from '../Elements/ItemCount'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import Boton from '../Elements/Boton'
+import { useAuth } from '../../context/AuthContext'
 
 
 const ItemDetail = ({id, category, name, price, img, stock, description}) => {
     const [quantity, setQuantity] = useState(0)
     const { addItem, getProduct } = useContext(CartContext)
+    const { user } = useAuth()
 
     const handleCount = (count) => {
         setQuantity(count) 
@@ -52,7 +54,7 @@ const ItemDetail = ({id, category, name, price, img, stock, description}) => {
                         quantity > 0 ? 
                             <Link to='/cart'>
                                 <Boton size='lg' colorScheme='twitter'>
-                                    Confirmar compra
+                                    Ir al carrito
                                 </Boton>
                             </Link> 
                         :   

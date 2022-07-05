@@ -5,29 +5,14 @@ import { BsFillCartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import {CartContext} from '../../context/CartContext'
 import { LOGO6 } from '../Imagenes/index'
-import User from '../Login/User'
+import User from './User'
 import CartMenu from './CartMenu'
 
 const NavBar = () => {
-  /* const [ categories, setCategories ] = useState() */
 
   const { getQuantity } = useContext(CartContext)
   const quantity = getQuantity()
   
-  
-  /* async function getCategories(db) {
-  const categorias = collection(db, 'categories');
-  const cat = await getDocs(categorias);
-  const cityList = cat.docs.map(doc => doc.data());
-  return cityList;
-} */
-
- /*  useEffect(() => {
-    getCategories()
-    .then(response => {
-      setCategories(response)
-    })
-  }, []) */
 
   return (
     <>

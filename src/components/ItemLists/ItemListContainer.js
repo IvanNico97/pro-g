@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { Flex, Heading, Spinner } from '@chakra-ui/react'
+import { Flex, Heading, Spinner, Box } from '@chakra-ui/react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import { getProducts } from '../../services/firebase/firestore'
-/* import { getDocs, collection, query, where } from 'firebase/firestore'
-import { db } from '../../services/firebase/index' */
  
 const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([])
@@ -22,21 +20,7 @@ const ItemListContainer = ({greeting}) => {
     }).finally(() => {
       setLoading(false)
     })
-    /* const collectionRef = categoryId 
-      ? query(collection(db, 'products'), where('category', '==', categoryId))
-      : collection(db, 'products')
-
-    getDocs(collectionRef).then(response => {
-      const products = response.docs.map(doc => {
-        return { id: doc.id, ...doc.data()}
-      })
-      setProducts(products)
-     }).catch(error => {
-          console.log(error)
-      }).finally(() => {
-          setLoading(false)
-      }) */
-    }, [categoryId])
+  }, [categoryId])
 
   if(loading){
     return ( 
@@ -63,9 +47,17 @@ const ItemListContainer = ({greeting}) => {
       >
       {
         categoryId ?
-        <Heading align='center' size='2xl' m='8' p='6'>{categoryId}</Heading> 
-        : 
-        <Heading as='u' align='center' size='2xl' m='8' p='6'>{greeting}</Heading>
+        <Box w='100%' align='center'>
+          <Heading bg='#E1E8ED' color='#14171A' borderRadius='8' w='250px' align='center' size='md' p='6' m='8'>
+            {categoryId}
+          </Heading> 
+        </Box>
+        :
+        <Box w='100%' align='center'>
+          <Heading bg='#E1E8ED' color='#14171A' borderRadius='8' w={{ base: '250px', sm: '250px', md: '300px', lg: '300px' }} align='center' size='md' p='6' m='8'>
+            {greeting}
+          </Heading>
+        </Box>
       }
         <Flex 
           wrap='wrap'

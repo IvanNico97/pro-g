@@ -1,94 +1,15 @@
 import React, { useContext, useState } from 'react'
 import ItemCart from './ItemCart'
-import { Flex, Box, Heading, Text, Spinner, useToast  } from '@chakra-ui/react'
+import { Flex, Box, Heading, Text } from '@chakra-ui/react' 
 import { CartContext } from '../../context/CartContext'
 import Boton from '../Elements/Boton'
 import { Link } from 'react-router-dom'
-import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
-import { db, collectionName } from '../../services/firebase/index'
-import { useAuth } from '../../context/AuthContext'
+import CartModal from './CartModal'
 
 const Cart = () => {
   const [ loading, setLoading ] = useState(false)
   const { cart, precioTotal, clearCart, cantidadProductos } = useContext (CartContext)
-  const { user } = useAuth()
-  const toast = useToast()
 
-
-  const createOrder = () => {
-    setLoading(true)
-    const objOrder = {
-      buyer: {
-        name: user.displayName,
-        email:user.email,
-        phone:user.phoneNumber,
-      },
-      items: cart,
-      total: precioTotal(),
-    }
-
-    const ids= cart.map(prod => prod.id)
-
-    const outOfStock = []
-
-    const batch = writeBatch(db)
-
-    const collectionRef = collection(db, collectionName.products)
-
-    getDocs(query(collectionRef, where(documentId(), 'in' , ids)))
-      .then(response => { 
-        response.docs.forEach(doc => {
-        const dataDoc = doc.data()
-
-        const prodQuantity = cart.find(prod => prod.id === doc.id)?.quantity 
-
-        if(dataDoc.stock >= prodQuantity) {
-            batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity}  )
-        } else {
-          outOfStock.push({ id: doc.id, ...dataDoc})
-        }
-      })
-      }).then(() => {
-        if(outOfStock.length === 0) {
-          const collectionRef = collection(db, collectionName.orders)
-          return addDoc(collectionRef, objOrder)
-        } else {
-          return Promise.reject({ type : 'out_of_stock', products: outOfStock })
-        }
-      }).then(({ id }) => {
-        batch.commit()
-        console.log(`el id de la orden es: ${id}`)
-        clearCart()
-      }).catch(error => {
-          if(error.type === 'out_of_stock') {
-            toast({
-              title: 'Próximamente.',
-              description: "El producto no cuenta con stock en este momento.",
-              status: 'error',
-              duration: 5000,
-              isClosable: true,
-            })
-        }
-      }).finally(() => {
-          setLoading(false)
-      })
-    }
-      
-    if(loading){
-      return (
-        <Flex h='500px' direction ='column' align='center' justify='center'>
-          <Heading>Cargando orden</Heading>
-          <Spinner
-            m='10'
-            thickness='4px'
-            speed='1s'
-            emptyColor='#E1E8ED'
-            color='#1DA1F2'
-            size='xl'
-          />
-        </Flex>
-      )
-    }
 
   if(cantidadProductos() === 0) {
     return (
@@ -102,7 +23,7 @@ const Cart = () => {
         </Box>
       </Flex>
     )
-  }
+  } 
 
   return (
     <>
@@ -120,7 +41,9 @@ const Cart = () => {
           <Boton colorScheme='twitter' w='200px' click={()=> clearCart()}>Limpiar Carrito</Boton>
         </Box>
         <Box>
-          <Boton click={createOrder} colorScheme='twitter' w='200px'>Generar orden</Boton>
+          <Box>
+            <CartModal />
+          </Box>
         </Box>
       </Flex> 
     </>

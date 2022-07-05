@@ -19,7 +19,6 @@ export const db = getFirestore(app)
 export const auth = getAuth(app)
 
 export const collectionName = {
-  categories:'categories',
   products: 'products', 
   orders: 'orders'
 }
