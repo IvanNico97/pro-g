@@ -17,7 +17,7 @@ Cada producto cuenta con un Link hacia '/detail/:productId' que es el componente
 
 El componente ItemDetailContainer, cuenta con un boton que nos direcciona al componente Cart './cart'
 
-Cart('./cart') da vista a los detalles de los productos en nuestro carrito, y nos muestra el precio total de estos. Además posee tres botones, 'Eliminar producto', 'Limpiar carrito' y 'Generar orden', este último abre un modal con un checkout de nuestro usuario y un boton para confirmar la compra. 
+Cart('/cart') da vista a los detalles de los productos en nuestro carrito, y nos muestra el precio total de estos. Además posee tres botones, 'Eliminar producto', 'Limpiar carrito' y 'Generar orden', este último abre un modal con un checkout de nuestro usuario y un boton para confirmar la compra. 
 
 
 
