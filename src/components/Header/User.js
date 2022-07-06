@@ -14,7 +14,7 @@ import {
     MenuItem, 
     MenuDivider } from '@chakra-ui/react'
   import { Link } from "react-router-dom";
-  import { BsFillCartFill, BsArrowRightSquareFill, BsFillPersonLinesFill, BsGoogle  } from "react-icons/bs";
+  import { BsFillCartFill, BsArrowRightSquareFill, BsGoogle  } from "react-icons/bs";
 
 const User = () => {
   const [error, setError] = useState()
@@ -22,7 +22,6 @@ const User = () => {
   const navigate = useNavigate()
 
   const { loginWithGoogle, logout, user } = useAuth()
-  console.log(user)
  
   const handleGoogleSignIn = async () => {
     try {
@@ -68,13 +67,6 @@ const User = () => {
               <Link to='/cart'>
                 <Button leftIcon={<BsFillCartFill/>} w='200px' bg='#E1E8ED' color='#14171A'>
                   Cart
-                </Button>
-              </Link>   
-            </MenuItem>
-            <MenuItem>
-              <Link to='/misOrdenes'>
-                <Button leftIcon={<BsFillPersonLinesFill/>} w='200px' bg='#14171A' color='white'>
-                  My orders
                 </Button>
               </Link>   
             </MenuItem>

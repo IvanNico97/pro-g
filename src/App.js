@@ -11,7 +11,6 @@ import { CartContextProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
 import { ProtectedRoute } from './services/firebase/ProtectedRoute'
 import Login from './components/Login/Login'
-import Orders from './components/Orders/Orders'
 
 
 function App() {
@@ -40,13 +39,6 @@ function App() {
               {
                 <ProtectedRoute>
                   <ItemDetailContainer /> 
-                </ProtectedRoute>
-              }
-            />
-            <Route path='/misOrdenes' element=
-              {
-                <ProtectedRoute>
-                  <Orders/> 
                 </ProtectedRoute>
               }
             />
