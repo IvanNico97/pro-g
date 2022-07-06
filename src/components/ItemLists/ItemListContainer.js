@@ -1,5 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import { Flex, Heading, Spinner, Box } from '@chakra-ui/react'
+import { 
+  Flex, 
+  Heading,
+  Spinner,
+  Box 
+} from '@chakra-ui/react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import { getProducts } from '../../services/firebase/firestore'

@@ -1,6 +1,11 @@
 import React, { useContext, useState } from 'react'
 import ItemCart from './ItemCart'
-import { Flex, Box, Heading, Text } from '@chakra-ui/react' 
+import { 
+  Flex,
+  Box,
+  Heading, 
+  Text 
+} from '@chakra-ui/react' 
 import { CartContext } from '../../context/CartContext'
 import Boton from '../Elements/Boton'
 import { Link } from 'react-router-dom'
