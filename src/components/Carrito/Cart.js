@@ -32,9 +32,9 @@ const Cart = () => {
 
   return (
     <>
-      <Flex justify='center' align='center'>
-        <Heading size='3xl' m='10'>Carrito</Heading>
-      </Flex>
+      <Box w='100%' align='center'>
+        <Heading bg='#E1E8ED' color='#14171A' borderRadius='8' w='250px' size='md' m='8' p='6'>Cart</Heading>
+      </Box>
       { 
         cart.map(producto => <ItemCart key={producto.id} producto={producto} isOrder={false} />)
       }

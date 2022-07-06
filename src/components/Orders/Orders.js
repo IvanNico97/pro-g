@@ -45,6 +45,9 @@ const Orders = () => {
 
     return (
         <>
+            <Box w='100%' align='center' mb='10'>
+                <Heading bg='#E1E8ED' color='#14171A' borderRadius='8' w='250px' size='md' m='8' p='6'>Orders</Heading>
+            </Box>
             {   
                 orders && orders.length > 0
                 ? orders.map((order, key) => <Order key={key} order={order}/>)
