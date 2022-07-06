@@ -11,6 +11,7 @@ import { CartContextProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
 import { ProtectedRoute } from './services/firebase/ProtectedRoute'
 import Login from './components/Login/Login'
+import Orders from './components/Orders/Orders'
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
             />
             <Route path='/category/:categoryId' element=
               { 
-                 <ProtectedRoute>
+                <ProtectedRoute>
                   <ItemListContainer/>
                 </ProtectedRoute>
               } 
@@ -39,6 +40,13 @@ function App() {
               {
                 <ProtectedRoute>
                   <ItemDetailContainer /> 
+                </ProtectedRoute>
+              }
+            />
+            <Route path='/misOrdenes' element=
+              {
+                <ProtectedRoute>
+                  <Orders/> 
                 </ProtectedRoute>
               }
             />

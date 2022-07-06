@@ -28,6 +28,7 @@ const CartModal = () => {
     setLoading(true)
     const objOrder = {
       buyer: {
+        id: user.uid,
         name: user.displayName,
         email:user.email,
         phone:user.phoneNumber,

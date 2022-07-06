@@ -22,6 +22,7 @@ const User = () => {
   const navigate = useNavigate()
 
   const { loginWithGoogle, logout, user } = useAuth()
+  console.log(user)
  
   const handleGoogleSignIn = async () => {
     try {
@@ -67,6 +68,13 @@ const User = () => {
               <Link to='/cart'>
                 <Button leftIcon={<BsFillCartFill/>} w='200px' bg='#E1E8ED' color='#14171A'>
                   Cart
+                </Button>
+              </Link>   
+            </MenuItem>
+            <MenuItem>
+              <Link to='/misOrdenes'>
+                <Button leftIcon={<BsFillPersonLinesFill/>} w='200px' bg='#14171A' color='white'>
+                  My orders
                 </Button>
               </Link>   
             </MenuItem>

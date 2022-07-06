@@ -5,13 +5,16 @@ import { Link } from 'react-router-dom'
 import { BsTrashFill } from "react-icons/bs";
 
 
-const ItemCart = ({ id, name, price, quantity}) => {
+const ItemCart = (producto) => {
     const { removeItem } = useContext (CartContext)
+    const { id, name, price, quantity } = producto.producto;
 
   return (
     <>
         <Flex 
-            m='8'
+            ml='8'
+            mb='10'
+            mr='8'
             p='8'
             direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}
             align='center'
@@ -42,11 +45,16 @@ const ItemCart = ({ id, name, price, quantity}) => {
                     ${price * quantity}
                 </Heading>
             </Box>
-            <Flex direction='column'>
-                <Box mb='3' pt='4'>
-                    <Button leftIcon={<BsTrashFill/>} w='100px' colorScheme='twitter' onClick={()=> removeItem(id)}>Eliminar</Button>
-                </Box>
-            </Flex>
+
+            {
+                !producto.isOrder && 
+                    <Flex direction='column'>
+                        <Box mb='3' pt='4'>
+                            <Button leftIcon={<BsTrashFill/>} w='100px' colorScheme='twitter' onClick={()=> removeItem(id)}>Eliminar</Button>
+                        </Box>
+                    </Flex>
+            }
+            
         </Flex> 
     </>
   )

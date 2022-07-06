@@ -31,7 +31,7 @@ const Cart = () => {
         <Heading size='3xl' m='10'>Carrito</Heading>
       </Flex>
       { 
-        cart.map(productos => <ItemCart key={productos.id} {...productos}/>)
+        cart.map(producto => <ItemCart key={producto.id} producto={producto} isOrder={false} />)
       }
       <Box w='auto' align='center' justify='center'>
         <Heading size='2xl' m={{ base: '8', sm: '8', md: '10', lg: '10' }}>Total a Pagar: ${precioTotal()}</Heading>
