@@ -1,6 +1,6 @@
 Documentar
 
-![alt text](/src/components/Imagenes/Gif/GIF.gif "Gif")
+![alt text](/src/components/Imagenes/Gif/GIF.gif "GIF")
 
 Para inicializar el proyecto:
 
