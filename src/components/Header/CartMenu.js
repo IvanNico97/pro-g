@@ -1,48 +1,58 @@
 import React from 'react'
-import { Flex, Menu, Button,
+import { 
+  Flex,
+  Menu,
+  Button,
   MenuButton,
   MenuList,
-  MenuItem, 
-  MenuDivider
+  MenuItem
 } from '@chakra-ui/react'
 import { BsJustify } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
+
 const CartMenu = () => {
   return (
-    <Flex align="center">
+    <Flex align="center" justify="center" >
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+    </style> 
       <Menu>
         <MenuButton>
-          <BsJustify />
+          <BsJustify/>
         </MenuButton>
-        <MenuList>
+        <MenuList border='none' bg='none' fontFamily="Audiowide">
           <MenuItem>
-            <Link to='/category/Teclados'>
-              <Button w='200px' bg='#E1E8ED' color='#14171A' >
-                Teclados
+            <Link to='/products'>
+              <Button size='sm' colorScheme='gray' color='black' w='200px'>
+                Featured products
               </Button>
             </Link>
           </MenuItem>
-          <MenuDivider/>
           <MenuItem>
-            <Link to='/category/Auriculares'>
-              <Button w='200px' bg='#E1E8ED' color='#14171A'>
-                Auriculares
+            <Link to='/category/Keyboards'>
+              <Button size='sm' colorScheme='gray' color='black' w='200px'>
+                Keyboards
               </Button>
             </Link>
           </MenuItem>
-          <MenuDivider/>
+          <MenuItem>
+            <Link to='/category/Headphones'>
+              <Button size='sm' colorScheme='gray' color='black' w='200px'>
+                Headphones
+              </Button>
+            </Link>
+          </MenuItem>
           <MenuItem>
             <Link to='/category/Mouses'>
-              <Button w='200px' bg='#E1E8ED' color='#14171A'>
+              <Button size='sm' colorScheme='gray' color='black' w='200px'>
                 Mouses
               </Button>
             </Link>
           </MenuItem>
-          <MenuDivider/>
           <MenuItem>
             <Link to='/category/Pads'>
-              <Button w='200px' bg='#E1E8ED' color='#14171A'>
+              <Button size='sm' colorScheme='gray' color='black' w='200px'>
                 Mouse Pads
               </Button>
             </Link>

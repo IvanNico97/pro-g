@@ -11,6 +11,7 @@ import { CartContextProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
 import { ProtectedRoute } from './services/firebase/ProtectedRoute'
 import Login from './components/Login/Login'
+import Home from './components/Home/Home'
 
 
 function App() {
@@ -21,13 +22,8 @@ function App() {
         <ChakraProvider>
           <NavBar/>
           <Routes>
-            <Route path='/' element=
-              {
-                <ProtectedRoute>
-                  <ItemListContainer greeting='Productos destacados'/> 
-                </ProtectedRoute>
-              }
-            />
+            <Route path='/' element= { <Home/> }/>
+            <Route path='/products' element= { <ItemListContainer greeting='Featured Products'/> }/>
             <Route path='/category/:categoryId' element=
               { 
                 <ProtectedRoute>
@@ -49,9 +45,9 @@ function App() {
                 </ProtectedRoute>
               }
             /> 
-            <Route path='*' element={<h1>PAGE NOT FOUND 404</h1>} />
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/nosotros' element={<Nosotros/>} />
+            <Route path='*' element={ <h1>PAGE NOT FOUND 404</h1> } />
+            <Route path='/login' element={ <Login/> }/>
+            <Route path='/nosotros' element={ <Nosotros/> } />
           </Routes>
           <Footer />
         </ChakraProvider>

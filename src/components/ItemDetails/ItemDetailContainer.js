@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
 
     if(loading){
       return ( 
-        <Flex h='500px' align='center' justify='center'>
+        <Flex h='500px' align='center' justify='center' bg='black' color='white'>
           <Spinner
               thickness='4px'
               speed='1s'

@@ -86,17 +86,17 @@ const CartModal = () => {
 
   return (
     <>
-      <Button colorScheme='twitter' w='200px' onClick={onOpen}>Generar orden</Button>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Button colorScheme='twitter' w='200px'  borderRadius='full' onClick={onOpen}>Generate order</Button>
+      <Modal isOpen={isOpen} onClose={onClose} size='xl'>
       <ModalOverlay />
-          <ModalContent>
+          <ModalContent border='4px' borderRadius='8' bg='black' color='white' >
               <Flex direction='column' align='center' justify='center'>
-                  <Box align='center' m='4'>
-                      <ModalHeader>Comprar como {user.email} ?</ModalHeader>
+                  <Box align='center' p='4'>
+                      <ModalHeader>Buy as {user.email} ?</ModalHeader>
                   </Box>
-                  <ModalCloseButton bg='#1DA1F2' color='white'/>
-                  <Box mb='4'>
-                      <Button colorScheme='twitter' w='200px' onClick={createOrder}>Confirmar</Button>
+                  <ModalCloseButton bg='#1DA1F2' color='white' borderRadius='full'/>
+                  <Box pb='4'>
+                      <Button colorScheme='twitter' w='200px' onClick={createOrder} borderRadius='full'>Confirm</Button>
                   </Box>
               </Flex>
           </ModalContent>

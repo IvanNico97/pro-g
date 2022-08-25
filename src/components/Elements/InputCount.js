@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { Input } from '@chakra-ui/react'
-import Boton from './Boton'
-
+import { Flex, Input, Button } from '@chakra-ui/react'
 
 const InputCount = ({initial,stock, handleCount}) => {
   const [count, setCount] = useState (initial)
@@ -13,8 +11,29 @@ const InputCount = ({initial,stock, handleCount}) => {
 
   return (
     <>
-      <Input type='number' w='200px' onChange={handleChange} value={count} initial={initial} stock={stock}/>
-      <Boton click={() => handleCount(count)} mt='2' w='200px' size='lg' colorScheme='twitter'>Agregar al carrito</Boton>
+      <Flex direction='column'>
+        <Input 
+          type='number' 
+          w='200px'
+          color='white'
+          border='2px'
+          borderRadius='full'
+          onChange={handleChange} 
+          value={count} 
+          initial={initial} 
+          stock={stock}
+        />
+        <Button 
+          onClick={() => handleCount(count)} 
+          mt='2' 
+          w='200px' 
+          size='lg' 
+          colorScheme='twitter'
+          borderRadius='full'
+        >
+          Add to cart
+        </Button>
+      </Flex>
     </>
   )
 }

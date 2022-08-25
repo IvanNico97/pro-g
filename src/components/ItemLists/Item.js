@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Image, Heading, Text, Button } from '@chakra-ui/react'
+import { Flex, Image, Heading, Text } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 
 const Item = ({ id, name, price, img }) => {
@@ -12,32 +12,26 @@ const Item = ({ id, name, price, img }) => {
       p='8'
       w='350px'
       h='400px'
-      border='1px'
-      borderColor='#E1E8ED'
-      borderRadius='6'
+      bg='black'
+      className='animate__animated animate__fadeInUp'
     >
       <Flex
         pt='4'
       >
-        <Image src={img} boxSize='180px'/>
+        <Link to={`/detail/${id}`}>  
+          <Image src={img} boxSize='250px'/>
+        </Link>
       </Flex>
       <Flex 
         p='2'
+        mt='2'
       >
-        <Heading align='center' size='lg'>{name}</Heading>
+        <Heading align='center' size='md' color='white'>{name}</Heading>
       </Flex>
       <Flex
         p='2'
       >
-        <Text align='center' color='#555555' fontSize='2xl'>${price}</Text>
-      </Flex>
-      <Flex 
-        p='2'
-        mb='4'
-      >
-        <Link to={`/detail/${id}`}>
-          <Button size='md' colorScheme='twitter'>Detalle del producto</Button>
-        </Link>
+        <Text align='center' fontSize='md' color='white'>${price}</Text>
       </Flex>
     </Flex>
   )

@@ -4,10 +4,10 @@ import {
   Flex,
   Box,
   Heading, 
-  Text 
+  Text,
+  Button
 } from '@chakra-ui/react' 
 import { CartContext } from '../../context/CartContext'
-import Boton from '../Elements/Boton'
 import { Link } from 'react-router-dom'
 import CartModal from './CartModal'
 
@@ -18,12 +18,12 @@ const Cart = () => {
 
   if(cantidadProductos() === 0) {
     return (
-      <Flex direction='column' align='center' justify='center' m='100px'>
-        <Heading>Tu carrito está vacío</Heading>
-          <Text pt='5'>¡Nuestros productos te esperan!</Text>
+      <Flex direction='column' align='center' justify='center' bg='black' color='white' p='100px'>
+        <Heading>Your cart is empty</Heading>
+          <Text pt='5'>Our products await you!</Text>
         <Box m='70px'>
-          <Link to='/'>
-            <Boton colorScheme='twitter' size='lg'>Continue Comprando</Boton>
+          <Link to='/products'>
+            <Button colorScheme='twitter' size='lg' borderRadius='full'>Shopping</Button>
           </Link>
         </Box>
       </Flex>
@@ -32,25 +32,35 @@ const Cart = () => {
 
   return (
     <>
-      <Box w='100%' align='center'>
-        <Heading bg='#E1E8ED' color='#14171A' borderRadius='8' w='250px' size='md' m='8' p='6'>Cart</Heading>
-      </Box>
-      { 
-        cart.map(producto => <ItemCart key={producto.id} producto={producto} isOrder={false} />)
-      }
-      <Box w='auto' align='center' justify='center'>
-        <Heading size='2xl' m={{ base: '8', sm: '8', md: '10', lg: '10' }}>Total a Pagar: ${precioTotal()}</Heading>
-      </Box>
-      <Flex direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} align='center' justify='center' m='2' mb='8'>
-        <Box p='8'>
-          <Boton colorScheme='twitter' w='200px' click={()=> clearCart()}>Limpiar Carrito</Boton>
+      <Flex bg='black' color='white' direction='column'>
+        <Box w='100%' align='center'>
+          <Heading
+            borderRadius='8' 
+            w='250px' 
+            size='md' 
+            m='8' 
+            p='6'
+          >
+            Cart
+          </Heading>
         </Box>
-        <Box>
-          <Box>
-            <CartModal />
+        { 
+          cart.map(producto => <ItemCart key={producto.id} producto={producto} isOrder={false} />)
+        }
+        <Box w='auto' align='center' justify='center'>
+          <Heading size='2xl' m={{ base: '8', sm: '8', md: '10', lg: '10' }}>Total : ${precioTotal()}</Heading>
+        </Box>
+        <Flex direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} align='center' justify='center' m='2' mb='8'>
+          <Box p='8'>
+            <Button colorScheme='twitter' w='200px' borderRadius='full' onClick={()=> clearCart()}>Clear cart</Button>
           </Box>
-        </Box>
-      </Flex> 
+          <Box>
+            <Box>
+              <CartModal />
+            </Box>
+          </Box>
+        </Flex>
+      </Flex>
     </>
   )
 }

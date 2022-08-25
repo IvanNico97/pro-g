@@ -28,17 +28,26 @@ const ButtonCount = ({initial, stock, handleCount }) => {
                     align='center'
                 >
                     <Box>
-                        <Button size='xs' onClick={Suma}>+</Button>
+                        <Button size='md' color='white' bg='black' onClick={Suma}>+</Button>
                     </Box>
-                    <Box p='5'>
-                        <Text>{count} unidades </Text>
+                    <Box pl='5' pr='5' color='white'>
+                        <Text>{count}</Text>
                     </Box>
                     <Box>
-                        <Button size='xs' onClick={Resta}>-</Button>
+                        <Button size='md' color='white' bg='black' onClick={Resta}>-</Button>
                     </Box>
                 </Flex>
                 <Flex>
-                    <Button onClick={() => handleCount(count)} w='auto' mt='2' size='lg' colorScheme='twitter'>Agregar al carrito</Button>
+                    <Button 
+                        onClick={() => handleCount(count)} 
+                        w='200px' 
+                        mt='2' 
+                        size='lg' 
+                        colorScheme='twitter'
+                        borderRadius='full'
+                    >
+                        Add to cart
+                    </Button>
                 </Flex>
             </Flex>
         </>

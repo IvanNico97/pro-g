@@ -4,7 +4,7 @@ import CartWidget from './CartWidget'
 import { BsFillCartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import {CartContext} from '../../context/CartContext'
-import { LOGO6 } from '../Imagenes/index'
+import { LOGO10 } from '../Imagenes/index'
 import User from './User'
 import CartMenu from './CartMenu'
 
@@ -23,13 +23,13 @@ const NavBar = () => {
         align='center'
         justify='space-between'
         color='white'
-        bg='#14171A'
+        bg='black'
         fontSize= '30px'
         fontFamily='Roboto, sans-serif'
       >
         <Box pl='4' ml='4'>
           <Link to='/'>
-            <Image src={LOGO6} borderRadius='full' boxSize='130px' alt='logo'></Image>
+            <Image src={LOGO10} borderRadius='full' boxSize='130px' alt='logo'/>
           </Link>
         </Box>
         <Flex

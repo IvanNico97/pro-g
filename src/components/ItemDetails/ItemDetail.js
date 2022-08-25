@@ -1,16 +1,13 @@
 import React, { useState, useContext } from 'react'
-import { Heading, Text, Image, Flex, Box } from '@chakra-ui/react'
+import { Heading, Text, Image, Flex, Box, Button } from '@chakra-ui/react'
 import ItemCount from '../Elements/ItemCount'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
-import Boton from '../Elements/Boton'
-import { useAuth } from '../../context/AuthContext'
 
 
 const ItemDetail = ({id, category, name, price, img, stock, description}) => {
     const [quantity, setQuantity] = useState(0)
     const { addItem, getProduct } = useContext(CartContext)
-    const { user } = useAuth()
 
     const handleCount = (count) => {
         setQuantity(count) 
@@ -25,13 +22,12 @@ const ItemDetail = ({id, category, name, price, img, stock, description}) => {
     return (
         <>
             <Flex
-                direction="column"
+                direction={{ base: 'column', sm: 'row', md: 'row' }}
+                justify='space-evenly'
                 align='center'
-                m='10'
                 w= 'auto'
-                border='1px'
-                borderRadius='6' 
-                borderColor='#E1E8ED'
+                h='700px'
+                bg='black'
             >
                 <Box mt='4'>
                     <Image 
@@ -40,22 +36,26 @@ const ItemDetail = ({id, category, name, price, img, stock, description}) => {
                         boxSize={{ base: '200px', sm: '200px', md: '380px', lg: '380px' }} 
                     />
                 </Box>
+            <Flex direction='column' w='auto' mt='8' mb='4' align='center'>
                 <Box mt='8' align='center'>
-                    <Heading color='#14171A' size='xl'>{name}</Heading>
+                    <Heading color='white' size='xl'>{name}</Heading>
                 </Box>
                 <Box mt='4'>
-                    <Text color='#14171A' fontSize='4xl'> ${price}</Text>
+                    <Text color='white' fontSize='2xl'> ${price}</Text>
                 </Box>
-                <Box align='center' p='3'>
-                    <Text fontSize='sm' color='#555555'>{description}</Text>
+                <Box align='center' p='3' mt='4' mb='4' w={{ base: '200px', sm: '350px', md: '400px' }}>
+                    <Text fontSize='sm' color='white'>{description}</Text>
                 </Box>
-                <Flex direction='column' w='auto' mt='8' mb='4' align='center'>
                     {
                         quantity > 0 ? 
                             <Link to='/cart'>
-                                <Boton size='lg' colorScheme='twitter'>
-                                    Ir al carrito
-                                </Boton>
+                                <Button 
+                                    size='lg' 
+                                    colorScheme='twitter' 
+                                    borderRadius='full'
+                                >
+                                    Shopping cart
+                                </Button>
                             </Link> 
                         :   
                         <ItemCount initial={hasThisProduct()} stock={stock} handleCount={handleCount}/>

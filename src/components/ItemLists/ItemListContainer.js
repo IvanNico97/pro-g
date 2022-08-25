@@ -29,7 +29,7 @@ const ItemListContainer = ({greeting}) => {
 
   if(loading){
     return ( 
-      <Flex h='500px' align='center' justify='center'>
+      <Flex h='500px' align='center' justify='center' bg='black' color='white'>
         <Spinner
             thickness='4px'
             speed='1s'
@@ -49,17 +49,32 @@ const ItemListContainer = ({greeting}) => {
         direction='column'
         color='#14171A'
         fontFamily='Roboto, sans-serif'
+        bg='black'
       >
       {
         categoryId ?
         <Box w='100%' align='center'>
-          <Heading bg='#E1E8ED' color='#14171A' borderRadius='8' w='250px' align='center' size='md' p='6' m='8'>
+          <Heading 
+            color='white' 
+            w='250px' 
+            align='center' 
+            size='md' 
+            p='6' 
+            m='8'
+          >
             {categoryId}
           </Heading> 
         </Box>
         :
         <Box w='100%' align='center'>
-          <Heading bg='#E1E8ED' color='#14171A' borderRadius='8' w={{ base: '250px', sm: '250px', md: '300px', lg: '300px' }} align='center' size='md' p='6' m='8'>
+          <Heading
+            color='white' 
+            w={{ base: '250px', sm: '250px', md: '300px', lg: '300px' }} 
+            align='center' 
+            size='md' 
+            p='6' 
+            m='8'
+            >
             {greeting}
           </Heading>
         </Box>

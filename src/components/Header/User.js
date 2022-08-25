@@ -2,19 +2,16 @@ import React, { useState } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import { 
-    Flex,
     Box,
-    Text,
     Button,
-    Heading,
-    Image,
     Menu,
     MenuButton,
     MenuList,
-    MenuItem, 
-    MenuDivider } from '@chakra-ui/react'
+    MenuItem,
+    Avatar
+  } from '@chakra-ui/react'
   import { Link } from "react-router-dom";
-  import { BsFillCartFill, BsArrowRightSquareFill, BsGoogle  } from "react-icons/bs";
+  import { BsFillCartFill, BsArrowRightSquareFill, BsFillPersonFill } from "react-icons/bs";
 
 const User = () => {
   const [error, setError] = useState()
@@ -22,6 +19,7 @@ const User = () => {
   const navigate = useNavigate()
 
   const { loginWithGoogle, logout, user } = useAuth()
+  console.log(user)
  
   const handleGoogleSignIn = async () => {
     try {
@@ -42,37 +40,40 @@ const User = () => {
 
   return (
     <>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+      </style> 
       { !user ?
         <Box mb='2' justify='center'>
-          <Button colorScheme='twitter' onClick= {handleGoogleSignIn}>{<BsGoogle/>}</Button> 
+          <Button bg='black' boxSize='40px' onClick= {handleGoogleSignIn}>
+            <Avatar borderRadius='full' boxSize='40px' />
+          </Button> 
         </Box> 
         :
         <Menu>
           <MenuButton>
-            <Image borderRadius='full' boxSize='40px' src={user.photoURL} alt='photo' />
+            <Avatar borderRadius='full' boxSize='40px' name={user.displayName} src={user.photoURL} />
           </MenuButton>
-          <MenuList>
-            <MenuItem>
-              <Flex direction='column' align='center' justify='center' m='2' color='#14171A'>
-                <Heading pb='2' size='md' justify='center'>
-                  {user.displayName}
-                </Heading>
-                <Text fontSize='sm' justify='center'>
-                  {user.email}
-                </Text>
-              </Flex>
-            </MenuItem>
-            <MenuDivider/>
+          <MenuList bg='none' border='none' fontFamily="Audiowide">
             <MenuItem>
               <Link to='/cart'>
-                <Button leftIcon={<BsFillCartFill/>} w='200px' bg='#E1E8ED' color='#14171A'>
+                <Button size='sm' leftIcon={<BsFillCartFill/>} w='200px' colorScheme='gray' color='black'>
                   Cart
                 </Button>
               </Link>   
             </MenuItem>
             <MenuItem>
-              <Link to='login'>
-                <Button w='200px' colorScheme='twitter' onClick={handleLogout} leftIcon={<BsArrowRightSquareFill/>}>Logout</Button> 
+              <Link to='/login'>
+                <Button
+                  size='sm'
+                  w='200px' 
+                  colorScheme='gray' 
+                  color='black'
+                  onClick={handleLogout} 
+                  leftIcon={<BsArrowRightSquareFill/>}
+                >
+                  Logout
+                </Button> 
               </Link>
             </MenuItem>
           </MenuList>
