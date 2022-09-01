@@ -5,7 +5,7 @@ import CardLinks from './CardLinks'
 const Links = (props) => {
   return (
     <>
-      <Flex w='100%' direction='column' bg='black' color='white'>
+      <Flex w='100%' direction='column' bg='white' color='black'>
         <Box align="center">
           <Heading mt='10' mb='60px'>Our products</Heading>
         </Box>

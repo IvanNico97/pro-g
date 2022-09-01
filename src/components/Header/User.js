@@ -7,11 +7,10 @@ import {
     Menu,
     MenuButton,
     MenuList,
-    MenuItem,
     Avatar
   } from '@chakra-ui/react'
   import { Link } from "react-router-dom";
-  import { BsFillCartFill, BsArrowRightSquareFill, BsFillPersonFill } from "react-icons/bs";
+  import { BsFillCartFill, BsArrowRightSquareFill } from "react-icons/bs";
 
 const User = () => {
   const [error, setError] = useState()
@@ -40,9 +39,6 @@ const User = () => {
 
   return (
     <>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-      </style> 
       { !user ?
         <Box mb='2' justify='center'>
           <Button bg='black' boxSize='40px' onClick= {handleGoogleSignIn}>
@@ -54,28 +50,28 @@ const User = () => {
           <MenuButton>
             <Avatar borderRadius='full' boxSize='40px' name={user.displayName} src={user.photoURL} />
           </MenuButton>
-          <MenuList bg='none' border='none' fontFamily="Audiowide">
-            <MenuItem>
-              <Link to='/cart'>
-                <Button size='sm' leftIcon={<BsFillCartFill/>} w='200px' colorScheme='gray' color='black'>
-                  Cart
-                </Button>
-              </Link>   
-            </MenuItem>
-            <MenuItem>
-              <Link to='/login'>
-                <Button
-                  size='sm'
-                  w='200px' 
-                  colorScheme='gray' 
-                  color='black'
-                  onClick={handleLogout} 
-                  leftIcon={<BsArrowRightSquareFill/>}
-                >
-                  Logout
-                </Button> 
-              </Link>
-            </MenuItem>
+          <MenuList bg='none' border='none' borderRadius='none'>
+            <Link to='/cart'>
+              <Button 
+                size='sm' 
+                leftIcon={<BsFillCartFill/>} 
+                w='200px' 
+                className='style-button'
+              >
+                Cart
+              </Button>
+            </Link>   
+            <Link to='/login'>
+              <Button
+                size='sm'
+                w='200px' 
+                className='style-button'
+                onClick={handleLogout} 
+                leftIcon={<BsArrowRightSquareFill/>}
+              >
+                Logout
+              </Button> 
+            </Link>
           </MenuList>
         </Menu> 
       }

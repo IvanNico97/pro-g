@@ -19,7 +19,7 @@
 } */
 
 .card:hover {
-    box-shadow: 5px 5px 10px 1px #555555 !important;
+    /* box-shadow: 5px 5px 10px 1px !important; */
     transition: all 0.5s linear;
 }
 

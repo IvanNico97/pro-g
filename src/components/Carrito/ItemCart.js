@@ -21,6 +21,9 @@ const ItemCart = (producto) => {
             bg='black'
             color='white' 
         > 
+            <Box>
+                <img src={img}></img>
+            </Box>
             <Box align='center'>
                 <Link to={`/detail/${id}`}>
                     <Heading>

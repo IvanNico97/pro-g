@@ -31,10 +31,11 @@ const Beneficios = () => {
         <Flex 
             w='100%'
             direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} 
-            justify='center'
+            justify='space-around'
+            m='10'
             align='center'
-            bg='black'
-            color='white'
+            bg='white' 
+            color='black'
         >
           {
             beneficios.map(beneficio => 

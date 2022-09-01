@@ -4,8 +4,15 @@ import { Flex, Box, Heading, Text } from '@chakra-ui/react'
 const Nosotros = () => {
   return (
     <>
-      <Flex direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} justify="space-between" m='8'>
-        <Box w={{ base: 'auto', sm: 'auto', md: '25%', lg: '25%' }} m='8'>
+      <Flex direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} 
+        justify="space-between" 
+        bg='black' 
+        color='white'
+      >
+        <Box w={{ base: 'auto', sm: 'auto', md: '25%', lg: '25%' }} 
+          p='4' 
+          m='8'
+        >
           <Heading mb='4'>
             Nosotros
           </Heading>
@@ -14,7 +21,10 @@ const Nosotros = () => {
             Todos nuestros vendedores se encuentran altamente capacitados para asesorarlo y ofrecerle exactamente lo que necesita.
           </Text>
         </Box>
-        <Box w={{ base: 'auto', sm: 'auto', md: '25%', lg: '25%' }} m='8'>
+        <Box w={{ base: 'auto', sm: 'auto', md: '25%', lg: '25%' }}
+          p='4'
+          m='8'
+        >
           <Heading mb='4'>
             Contactate
           </Heading>
@@ -29,10 +39,11 @@ const Nosotros = () => {
           </Text>
         </Box>
         <Box 
-          w={{ base: 'auto', sm: 'auto', md: '25%', lg: '25%' }} 
+          w={{ base: 'auto', sm: 'auto', md: '25%', lg: '25%' }}
+          p='4'
           m='8'
           bg='#E1E8ED'
-          color='#14171A'
+          color='#14171A' 
           borderRadius='8'
         >
           <Heading mb='4'>
