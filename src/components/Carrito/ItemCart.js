@@ -1,13 +1,13 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
-import { Flex, Box, Heading, Text, Button, Divider } from '@chakra-ui/react'
+import { Flex, Box, Heading, Button, Divider, Image } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { BsTrashFill } from "react-icons/bs";
 
 const ItemCart = (producto) => {
     const { removeItem } = useContext (CartContext)
     const { id, name, price, quantity, img } = producto.producto;
-
+    
   return (
     <>
         <Flex 
@@ -17,12 +17,12 @@ const ItemCart = (producto) => {
             p='8'
             direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}
             align='center'
-            justify='space-between' 
-            bg='black'
-            color='white' 
+            justify='space-around' 
+            bg='black' 
+            color='white'  
         > 
-            <Box>
-                <img src={img}></img>
+            <Box boxSize='110px'>
+                <Image src={img} />
             </Box>
             <Box align='center'>
                 <Link to={`/detail/${id}`}>
@@ -30,34 +30,24 @@ const ItemCart = (producto) => {
                         {name}
                     </Heading>
                 </Link>
-                <Box>
-                    <Text fontSize='md' color='#1DA1F2' pt={{ base: '3', sm: '3', md: '2', lg: '2' }}>
-                        c/u : ${price}
-                    </Text>
-                </Box>
-            </Box>
-            <Box align='center' mb='3'>
-                <Text fontSize='md' color='#1DA1F2' m={{ base: '4', sm: '4', md: '2', lg: '2' }}>Amount:</Text>
-                 {quantity}
             </Box>
             <Box>
                 <Heading>
-                    ${price * quantity}
+                    $ {price * quantity}
                 </Heading>
             </Box>
-
             {
                 !producto.isOrder && 
                     <Flex direction='column'>
                         <Box mb='3' pt='4'>
                             <Button 
-                                leftIcon={<BsTrashFill/>} 
-                                w='100px' 
-                                colorScheme='twitter' 
-                                borderRadius='full' 
+                                /* colorScheme='twitter'  */
+                                bg='red'
+                                color='white'
+                                borderRadius='8' 
                                 onClick={()=> removeItem(id)}
                             >
-                                Delete
+                                {<BsTrashFill/>}
                             </Button>
                         </Box>
                     </Flex>

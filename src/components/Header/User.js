@@ -51,27 +51,35 @@ const User = () => {
             <Avatar borderRadius='full' boxSize='40px' name={user.displayName} src={user.photoURL} />
           </MenuButton>
           <MenuList bg='none' border='none' borderRadius='none'>
-            <Link to='/cart'>
-              <Button 
-                size='sm' 
-                leftIcon={<BsFillCartFill/>} 
-                w='200px' 
-                className='style-button'
-              >
-                Cart
-              </Button>
-            </Link>   
-            <Link to='/login'>
-              <Button
-                size='sm'
-                w='200px' 
-                className='style-button'
-                onClick={handleLogout} 
-                leftIcon={<BsArrowRightSquareFill/>}
-              >
-                Logout
-              </Button> 
-            </Link>
+            <Box>
+              <Link to='/carrito'>
+                <Button 
+                  size='sm' 
+                  leftIcon={<BsFillCartFill/>} 
+                  w='200px'
+                  ml='4'
+                  p='4'
+                  className='style-button'
+                >
+                  Carrito
+                </Button>
+              </Link>   
+            </Box>
+            <Box>
+              <Link to='/registro'>
+                <Button
+                  size='sm'
+                  w='200px'
+                  ml='4'
+                  p='4' 
+                  className='style-button'
+                  onClick={handleLogout} 
+                  leftIcon={<BsArrowRightSquareFill/>}
+                >
+                  Cerrar sesión
+                </Button> 
+              </Link>
+            </Box>
           </MenuList>
         </Menu> 
       }

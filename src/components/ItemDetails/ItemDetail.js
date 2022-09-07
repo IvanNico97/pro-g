@@ -11,7 +11,7 @@ const ItemDetail = ({id, category, name, price, img, stock, description}) => {
 
     const handleCount = (count) => {
         setQuantity(count) 
-        addItem ({ id, category, name, price, stock, quantity: count }) 
+        addItem ({ id, category, img, name, price, stock, quantity: count }) 
     }
     
     const hasThisProduct = () => {
@@ -48,13 +48,13 @@ const ItemDetail = ({id, category, name, price, img, stock, description}) => {
                 </Box>
                     {
                         quantity > 0 ? 
-                            <Link to='/cart'>
+                            <Link to='/carrito'>
                                 <Button 
                                     size='lg' 
                                     colorScheme='twitter' 
-                                    borderRadius='full'
+                                    borderRadius='8'
                                 >
-                                    Shopping cart
+                                    Ir al carrito
                                 </Button>
                             </Link> 
                         :   

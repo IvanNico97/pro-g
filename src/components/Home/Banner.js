@@ -12,17 +12,17 @@ const Banner = () => {
             w='100%'
         >
             <Carousel>
-                <Carousel.Item interval={5000}>
+                <Carousel.Item interval={8000}>
                     <Box h='520px'>
                         <Image objectFit='cover' src={bannerauri}/>
                     </Box>
                 </Carousel.Item>
-                <Carousel.Item interval={5000}>
-                    <Box objectFit='cover' h='520px'>
+                <Carousel.Item interval={8000}>
+                    <Box h='520px'>
                         <Image objectFit='cover' src={bannermouse}/>
                     </Box>
                 </Carousel.Item>
-                <Carousel.Item interval={5000}>
+                <Carousel.Item interval={8000}>
                     <Box h='520px'>
                         <Image objectFit='cover' src={bannerteclado2}/>
                     </Box>

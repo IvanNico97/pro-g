@@ -1,0 +1,11 @@
+.anima {
+    outline: none;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.anima:hover {
+    box-shadow: 0px 5px 15px -3px black;
+    transform: scale(1.5);
+    transition: all 1s;
+}

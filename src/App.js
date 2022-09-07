@@ -23,7 +23,7 @@ function App() {
           <NavBar/>
           <Routes>
             <Route path='/' element= { <Home/> }/>
-            <Route path='/products' element= { <ItemListContainer greeting='Featured Products'/> }/>
+            <Route path='/productos' element= { <ItemListContainer greeting='Nuestros productos'/> }/>
             <Route path='/category/:categoryId' element=
               { 
                 <ProtectedRoute>
@@ -38,7 +38,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route path='/cart' element=
+            <Route path='/carrito' element=
               {
                 <ProtectedRoute>
                   <Cart/>
@@ -46,7 +46,7 @@ function App() {
               }
             /> 
             <Route path='*' element={ <h1>PAGE NOT FOUND 404</h1> } />
-            <Route path='/login' element={ <Login/> }/>
+            <Route path='/registro' element={ <Login/> }/>
             <Route path='/nosotros' element={ <Nosotros/> } />
           </Routes>
           <Footer />

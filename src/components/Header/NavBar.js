@@ -42,7 +42,7 @@ const NavBar = () => {
           </Box>
           <Box mr='2' pr='2'>
             { quantity > 0 &&
-              <Link to='/cart'>
+              <Link to='/carrito'>
                 <CartWidget bg='#14171A' icon={<BsFillCartFill/>}/>
               </Link>
             }

@@ -9,10 +9,10 @@ const CardLinks = () => {
     const cards = [
         { 
             id:1, 
-            title:'Headphones',
+            title:'Auriculares',
             image: auri,
             text: 'Headphones at the best price on the market',
-            link: '/category/Headphones'
+            link: '/category/Auriculares'
         },
         { 
             id:2 ,
@@ -23,10 +23,10 @@ const CardLinks = () => {
         },
         { 
             id:3,
-            title: 'Keyboards',
+            title: 'Teclados',
             image: tecla,
             text: 'Keyboards at the best price on the market',
-            link:'/category/Keyboards'
+            link:'/category/Teclados'
         },
         { 
             id:4,
@@ -46,9 +46,14 @@ const CardLinks = () => {
         >
             {
                 cards.map(card =>  
-                    <Flex p='2' key={card.id}>
+                    <Flex p='2' m='2' key={card.id}>
                         <Link to={card.link}>
-                            <Image className='card card-img-top' boxSize='300px' objectFit='cover' src={card.image}/>
+                            <Image 
+                                className='card card-img-top' 
+                                boxSize='250px' 
+                                objectFit='cover' 
+                                src={card.image}    
+                            />
                         </Link>
                     </Flex> 
                 )

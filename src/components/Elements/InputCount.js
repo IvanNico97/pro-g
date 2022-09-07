@@ -31,7 +31,7 @@ const InputCount = ({initial,stock, handleCount}) => {
           colorScheme='twitter'
           borderRadius='full'
         >
-          Add to cart
+          Añadir al carrito
         </Button>
       </Flex>
     </>

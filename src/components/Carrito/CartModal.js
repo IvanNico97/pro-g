@@ -9,12 +9,16 @@ import {
   Button,
   Flex,
   Box,
-  useToast
+  useToast,
+  Heading
 } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { CartContext } from '../../context/CartContext'
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 import { db, collectionName } from '../../services/firebase/index'
+import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+import './CartModal.css'
 
 
 const CartModal = () => {
@@ -85,18 +89,57 @@ const CartModal = () => {
     }
 
   return (
-    <>
-      <Button colorScheme='twitter' w='200px'  borderRadius='full' onClick={onOpen}>Generate order</Button>
+      <>
+        <Flex 
+          direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} 
+          h={{ base: '350px', sm: '350px', md: '150px', lg: '150px' }}
+          m='2'
+          ml='10'
+          mr='10'
+          bgGradient= 'linear(347deg, rgba(46,46,70,1) 5%, rgba(0,0,0,1) 85%, rgba(46,46,70,1) 10%)'
+          color='white'
+          justify='space-between'
+          align='center'
+          p='10'
+        >
+          <Link to='/productos'>
+            <Button
+              colorScheme='twitter' 
+              w='180px' 
+              borderRadius='8' 
+              leftIcon={<BsFillCaretLeftFill />}
+            >
+              Ver mas productos
+            </Button>
+          </Link>
+          <Box className='anima'>
+            <Heading size='2xl' m={{ base: '8', sm: '8', md: '1', lg: '1' }}>
+              Total = $ {precioTotal()}
+            </Heading>
+          </Box>
+            <Button
+              colorScheme='twitter' 
+              w='180px' 
+              borderRadius='8' 
+              onClick={onOpen} 
+              rightIcon={<BsFillCaretRightFill/>}
+            >
+              Realizar compra
+            </Button>
+            {/* <Box>
+              <Button bg='red' w='180px' borderRadius='8' onClick={()=> clearCart()}>Limpiar carrito</Button>
+            </Box>   */}
+        </Flex>
       <Modal isOpen={isOpen} onClose={onClose} size='xl'>
       <ModalOverlay />
           <ModalContent border='4px' borderRadius='8' bg='black' color='white' >
               <Flex direction='column' align='center' justify='center'>
                   <Box align='center' p='4'>
-                      <ModalHeader>Buy as {user.email} ?</ModalHeader>
+                      <ModalHeader>Comprar como {user.email} ?</ModalHeader>
                   </Box>
                   <ModalCloseButton bg='#1DA1F2' color='white' borderRadius='full'/>
                   <Box pb='4'>
-                      <Button colorScheme='twitter' w='200px' onClick={createOrder} borderRadius='full'>Confirm</Button>
+                      <Button colorScheme='twitter' w='200px' onClick={createOrder} borderRadius='8'>Confirmar compra</Button>
                   </Box>
               </Flex>
           </ModalContent>

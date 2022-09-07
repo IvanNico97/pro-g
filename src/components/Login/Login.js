@@ -31,7 +31,7 @@ const Login = () => {
         color='white'
     >
         <Box m='8'>
-            <Heading>Login for access</Heading>
+            <Heading>Registrarse para continuar</Heading>
         </Box>
         <Box m='8'>
             <Button 
@@ -41,7 +41,7 @@ const Login = () => {
                 onClick={handleGoogleSignIn} 
                 leftIcon={<BsFillPersonFill/>}
             >
-                LOGIN
+                Registro
             </Button>
         </Box>
     </Flex>

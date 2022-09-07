@@ -4,26 +4,31 @@ import {
   Box ,
   Heading
 } from '@chakra-ui/react'
-import { BsEnvelopeFill, BsCartCheckFill, BsFillTagsFill } from "react-icons/bs";
+import { BsEnvelopeFill, BsCartCheckFill, BsFillTagsFill, BsFillTelephoneFill } from "react-icons/bs";
 
 const Beneficios = () => {
 
   const beneficios = [
     {
       id:1,
-      title:'Free shipping',
+      title:'ENVÍO GRATIS',
       logo:<BsEnvelopeFill/>
     },
     {
       id:1,
-      title:'Protected buy',
+      title:'COMPRA PROTEGIDA',
       logo:<BsCartCheckFill/>
     },
     {
       id:1,
-      title:'Discounts on all products',
+      title:'DESCUENTOS',
       logo:<BsFillTagsFill/>
     },
+    {
+      id:1,
+      title:'VENTA TELEFÓNICA',
+      logo:<BsFillTelephoneFill/>
+    }
   ]
 
   return (
@@ -32,7 +37,6 @@ const Beneficios = () => {
             w='100%'
             direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} 
             justify='space-around'
-            m='10'
             align='center'
             bg='white' 
             color='black'
@@ -47,8 +51,10 @@ const Beneficios = () => {
                 align='center'
                 className='animate animate__animated animate__fadeInLeft'
               >
-                  <Box fontSize='30px' p='6'>{beneficio.logo}</Box>
-                  <Heading size='lg' align='center' >{beneficio.title}</Heading>
+                  <Box fontSize='35px' p='6'>{beneficio.logo}</Box>
+                  <Box>
+                    <Heading size='md' align='center' >{beneficio.title}</Heading>
+                  </Box>
               </Flex>
             )
           }

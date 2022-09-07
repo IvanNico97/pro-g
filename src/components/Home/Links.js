@@ -5,11 +5,18 @@ import CardLinks from './CardLinks'
 const Links = (props) => {
   return (
     <>
-      <Flex w='100%' direction='column' bg='white' color='black'>
+      <Flex 
+        w='100%' 
+        direction='column' 
+        bg='white' 
+        color='black'
+        mb='10'
+        pb='10'
+      >
         <Box align="center">
-          <Heading mt='10' mb='60px'>Our products</Heading>
+          <Heading mt='8' mb='40px' fontSize='30px'>PRODUCTOS POR CATEGORÍAS</Heading>
         </Box>
-        <CardLinks />
+        <CardLinks/>
       </Flex>
     </>
   )

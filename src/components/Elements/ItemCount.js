@@ -1,6 +1,5 @@
 import React, {useState } from 'react'
 import { Flex, Button } from '@chakra-ui/react'
-
 import ButtonCount from './ButtonCount'
 import InputCount from './InputCount'
 
@@ -20,7 +19,7 @@ const ItemCount = ({initial, stock, handleCount}) => {
           borderRadius='full'
           onClick={() => setInputType(inputType === 'input' ? 'button' : 'input')}
         >
-          Change counter
+          Cambiar contador
         </Button>
       </Flex>
       <Flex direction='column' align='center'>
