@@ -17,7 +17,7 @@ const InputCount = ({initial,stock, handleCount}) => {
           w='200px'
           color='white'
           border='2px'
-          borderRadius='full'
+          borderRadius='8'
           onChange={handleChange} 
           value={count} 
           initial={initial} 
@@ -29,7 +29,7 @@ const InputCount = ({initial,stock, handleCount}) => {
           w='200px' 
           size='lg' 
           colorScheme='twitter'
-          borderRadius='full'
+          borderRadius='8'
         >
           Añadir al carrito
         </Button>

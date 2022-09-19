@@ -10,11 +10,11 @@ import { Link } from "react-router-dom";
 const Promo = () => {
   return (
     <Flex 
-        bgGradient= 'linear(347deg, rgba(46,46,70,1) 4%, rgba(0,0,0,1) 50%, rgba(46,46,70,1) 96%)' /* 'linear(270deg, rgba(3,3,4,1) 30%, rgba(46,46,70,0.9780287114845938) 50%, rgba(3,3,4,1) 70%)' */
+        bg='black'
         color='white' 
-        w='95%' 
-        h='200px'
-        mt='10'
+        w='100%'
+        h='100%'
+        p='10'
         align='center'
         justify='center'
         fontFamily='Roboto, sans-serif'
@@ -23,11 +23,11 @@ const Promo = () => {
             align='center'
             justify='center'
         >
-            <Text fontSize='25px' m='4'>
-                Comprá lo que quieras y recibilo gratis en tu casa
+            <Text fontSize='30px' pt='6' mt='6'>
+                COMPRÁ LO QUE QUIERAS Y RECIBILO EN TU CASA
             </Text>
             <Link to='/productos'>
-              <Button colorScheme='twitter' m='4'>
+              <Button colorScheme='twitter' p='4' mt='6'>
                   Ver productos
               </Button>
             </Link>

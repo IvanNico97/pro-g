@@ -9,3 +9,8 @@
     transform: scale(1.5);
     transition: all 1s;
 }
+
+.total {
+    box-shadow: 1px 1px 10px 1px white !important;
+    transition: all 0.3s linear;
+}

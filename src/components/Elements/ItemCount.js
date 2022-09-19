@@ -16,7 +16,7 @@ const ItemCount = ({initial, stock, handleCount}) => {
           size='xs' 
           w='200px' 
           colorScheme='twitter'
-          borderRadius='full'
+          borderRadius='8'
           onClick={() => setInputType(inputType === 'input' ? 'button' : 'input')}
         >
           Cambiar contador

@@ -44,7 +44,7 @@ const ButtonCount = ({initial, stock, handleCount }) => {
                         mt='2' 
                         size='lg' 
                         colorScheme='twitter'
-                        borderRadius='full'
+                        borderRadius='8'
                     >
                         Añadir al carrito
                     </Button>

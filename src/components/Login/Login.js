@@ -37,7 +37,7 @@ const Login = () => {
             <Button 
                 colorScheme='twitter' 
                 w='auto' 
-                borderRadius='full' 
+                borderRadius='8' 
                 onClick={handleGoogleSignIn} 
                 leftIcon={<BsFillPersonFill/>}
             >

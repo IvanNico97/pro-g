@@ -5,7 +5,11 @@ import "./Footer.css"
 
 const Social = () => {
   return (
-    <Flex justify='center' align='center'>
+    <Flex 
+        justify='center' 
+        align='center'
+        mb={{ base: '6', sm: '6', md: '0', lg: '0' }}
+    >
         <a href='https://www.linkedin.com/in/ivan-nicolas-avila-3ba5b2170/'>
             <Box pr='4' fontSize='30px' className='color-links'>
                 {<BsFacebook/>}

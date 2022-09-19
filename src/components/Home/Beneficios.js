@@ -38,8 +38,8 @@ const Beneficios = () => {
             direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} 
             justify='space-around'
             align='center'
-            bg='white' 
-            color='black'
+            bg='black' 
+            color='white'
         >
           {
             beneficios.map(beneficio => 

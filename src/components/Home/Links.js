@@ -8,9 +8,8 @@ const Links = (props) => {
       <Flex 
         w='100%' 
         direction='column' 
-        bg='white' 
-        color='black'
-        mb='10'
+        bg='black' 
+        color='white'
         pb='10'
       >
         <Box align="center">

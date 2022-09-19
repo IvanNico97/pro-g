@@ -12,7 +12,7 @@ const Footer = () => {
         h='100%'
         direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} 
         align='center'
-        justify={{ base: 'center', sm: 'center', md: 'space-between', lg: 'space-between' }}
+        justify={{ base: 'space-around', sm: 'space-around', md: 'space-between', lg: 'space-between' }}
         color='white'
         bg='black'
         fontSize= '15px'
@@ -25,14 +25,14 @@ const Footer = () => {
               mr='4'
             >
               <Link to='/'>
-                <Image src={LOGO10} borderRadius='full' boxSize='130px' alt='logo'></Image>
+                <Image src={LOGO10} borderRadius='full' boxSize='130px' alt='logo'/>
               </Link>
             </Box>
             <Box 
               direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}
               w={{ base: '150px', sm: '200px', md: '300px', lg: '700px' }}
               justify='space-around'
-              align='end'
+              align='center'
             >
               <Contactos/>  
             </Box>

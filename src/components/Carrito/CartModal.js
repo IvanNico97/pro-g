@@ -93,14 +93,13 @@ const CartModal = () => {
         <Flex 
           direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }} 
           h={{ base: '350px', sm: '350px', md: '150px', lg: '150px' }}
-          m='2'
-          ml='10'
-          mr='10'
-          bgGradient= 'linear(347deg, rgba(46,46,70,1) 5%, rgba(0,0,0,1) 85%, rgba(46,46,70,1) 10%)'
-          color='white'
+          ml='8'
+          mr='8'
+          mb='10'
+          p='10'
           justify='space-between'
           align='center'
-          p='10'
+          className='total'
         >
           <Link to='/productos'>
             <Button
@@ -126,9 +125,6 @@ const CartModal = () => {
             >
               Realizar compra
             </Button>
-            {/* <Box>
-              <Button bg='red' w='180px' borderRadius='8' onClick={()=> clearCart()}>Limpiar carrito</Button>
-            </Box>   */}
         </Flex>
       <Modal isOpen={isOpen} onClose={onClose} size='xl'>
       <ModalOverlay />

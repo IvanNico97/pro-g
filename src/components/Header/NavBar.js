@@ -35,9 +35,9 @@ const NavBar = () => {
         <Flex
           w={{ base: '100%', sm: '100%', md: 'auto', lg: 'auto' }}
           align='center' 
-          justify={{ base: 'space-around', sm: 'space-around', md: 'space-around', lg: 'space-around' }}
+          justify={{ base: 'space-between', sm: 'space-around', md: 'space-around', lg: 'space-around' }}
         >
-          <Box mr='2' mt='1' pr='2'>
+          <Box mr='2' ml='2' mt='1' pr='2'>
             <CartMenu />
           </Box>
           <Box mr='2' pr='2'>
@@ -47,7 +47,7 @@ const NavBar = () => {
               </Link>
             }
           </Box>
-          <Box mr='4' mt='2' pr='4' >
+          <Box mr='2' mt='2' pr='2' >
             <User/>
           </Box>
         </Flex>

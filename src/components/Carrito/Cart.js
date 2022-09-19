@@ -6,11 +6,14 @@ import {
   Heading, 
   Text,
   Button,
-  Divider
+  Divider,
+  Image
 } from '@chakra-ui/react' 
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 import CartModal from './CartModal'
+import {LOGO10} from '../Imagenes/index'
+import { BsFillCartFill } from "react-icons/bs";
 
 
 const Cart = () => {
@@ -43,7 +46,7 @@ const Cart = () => {
             m='8' 
             p='6'
           >
-            Carrito de compras
+            <Image src={LOGO10}/>
           </Heading>
         </Box>
         <Divider/>
