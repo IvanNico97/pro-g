@@ -9,7 +9,11 @@ import { Flex } from '@chakra-ui/react'
 const Home = () => {
   return (
     <>
-        <Flex direction='column' align="center">
+        <Flex 
+          direction='column' 
+          align="center"
+          pt='80px'
+        >
             <Banner/>
             <Links/>
             <Promo/>

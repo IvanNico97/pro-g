@@ -1,0 +1,9 @@
+.header {
+    position:fixed !important;
+    z-index: 100 !important;
+    width: 100%;
+    margin-bottom: 100px !important; 
+    background:black !important;
+    color:antiquewhite;
+    font-size:30px;
+}

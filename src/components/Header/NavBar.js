@@ -7,6 +7,7 @@ import {CartContext} from '../../context/CartContext'
 import { LOGO10 } from '../Imagenes/index'
 import User from './User'
 import CartMenu from './CartMenu'
+import './NavBar.css'
 
 const NavBar = () => {
 
@@ -17,15 +18,11 @@ const NavBar = () => {
   return (
     <>
       <Flex
-        w='auto'
-        h='auto'
         direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}
         align='center'
         justify='space-between'
-        color='white'
-        bg='black'
-        fontSize= '30px'
         fontFamily='Roboto, sans-serif'
+        className='header'
       >
         <Box pl='4' ml='4'>
           <Link to='/'>
