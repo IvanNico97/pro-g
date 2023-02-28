@@ -14,7 +14,8 @@ const CartWidget = ({icon, colorScheme, bg}) => {
         <Button
           size='md'
           colorScheme={colorScheme}
-          bg={bg}
+          bg='#1DA1F2'
+          /* bg={bg} */
           leftIcon={icon}
         >
           <Box>

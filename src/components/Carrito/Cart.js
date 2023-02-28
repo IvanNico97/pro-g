@@ -23,8 +23,8 @@ const Cart = () => {
 
   if(cantidadProductos() === 0) {
     return (
-      <Flex direction='column' align='center' justify='center' bg='black' color='white' p='100px'>
-        <Heading>Tu carrito esta vacío</Heading>
+      <Flex direction='column' align='center' justify='center' bg='black' color='white' p='120px'>
+        <Heading pt='60px'>Tu carrito esta vacío</Heading>
           <Text pt='5'>¡Nuestros productos te esperan!</Text>
         <Box m='70px'>
           <Link to='/productos'>

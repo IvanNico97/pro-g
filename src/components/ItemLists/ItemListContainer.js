@@ -72,7 +72,7 @@ const ItemListContainer = ({greeting}) => {
             w={{ base: '250px', sm: '250px', md: '300px', lg: '300px' }} 
             align='center' 
             size='md' 
-            p='6' 
+            p='6'
             m='8'
             >
             {greeting}

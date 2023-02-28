@@ -29,7 +29,7 @@ const ItemDetail = ({id, category, name, price, img, stock, description}) => {
                 h='700px'
                 bg='black'
             >
-                <Box mt='4'>
+                <Box mt='4' pt={{ base:'500px', sm:'1px', md:'1px' }}>
                     <Image 
                         src={img} 
                         alt={name} 
